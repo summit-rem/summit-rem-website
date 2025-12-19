@@ -1,0 +1,8 @@
+:root {
+  /* Brand Colors (from your CMYK Burgundy C35 M86 Y71 K40 => approx #63152C) */
+  --color-burgundy: #63152c;
+  --color-black: #000000;
+
+  /* Optional: metallic “silver” base (use as text/border if needed) */
+  --color-silver: #c0c0c0;
+}
