@@ -8,7 +8,7 @@ export default function AppLayout() {
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
 
-      <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1">
         <Outlet />
       </main>
 

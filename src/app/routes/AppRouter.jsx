@@ -11,6 +11,8 @@ import ContactPage from "../../pages/contact/ContactPage";
 import PayRentPage from "../../pages/payrent/PayRentPage";
 import AccountPage from "../../pages/account/AccountPage";
 import NotFoundPage from "../../pages/not-found/NotFoundPage";
+import TeamsPage from "../../pages/team/TeamsPage";
+
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +27,7 @@ export const router = createBrowserRouter([
       { path: "contact", element: <ContactPage /> },
       { path: "pay-rent", element: <PayRentPage /> },
       { path: "account", element: <AccountPage /> },
+      { path: "about/team", element: <TeamsPage /> },
 
       { path: "*", element: <NotFoundPage /> },
     ],
