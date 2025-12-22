@@ -1,8 +1,7 @@
 :root {
-  /* Brand Colors (from your CMYK Burgundy C35 M86 Y71 K40 => approx #63152C) */
-  --color-burgundy: #63152c;
-  --color-black: #000000;
-
-  /* Optional: metallic “silver” base (use as text/border if needed) */
-  --color-silver: #c0c0c0;
+  --color-burgundy: #6b1220;   /* your burgundy */
+  --color-ink: #0b1220;        /* near-black (matches footer vibe) */
+  --color-muted: #667085;      /* muted text */
+  --color-surface: #ffffff;    /* white */
+  --color-border: #e5e7eb;     /* gray-200 */
 }
