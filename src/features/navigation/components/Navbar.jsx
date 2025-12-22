@@ -5,6 +5,7 @@ import { navConfig } from "../config/navConfig";
 import NavDropdown from "./NavDropdown";
 import NavLinkItem from "./NavLinkItem";
 import MobileNav from "./MobileNav";
+import Container from "../../../components/ui/Container";
 
 function getIcon(name) {
   return Icons?.[name] ?? null;
@@ -26,25 +27,29 @@ export default function Navbar() {
 
   return (
     <header className="w-full bg-white border-b border-gray-200">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="h-16 flex items-center justify-between">
-          {/* Brand (logo + label) */}
-          <NavLinkItem
-            to={brand.to}
-            className="text-base font-semibold text-gray-900 gap-3"
-          >
-            {brand.logo ? (
-              <img
-                src={brand.logo}
-                alt={brand.label}
-                className="h-9 w-auto object-contain"
-              />
-            ) : null}
-            <span className="hidden sm:inline">{brand.label}</span>
-          </NavLinkItem>
+      <Container className="h-16">
+        <nav className="h-16 flex items-center justify-between gap-3">
+          {/* Brand */}
+          <div className="shrink-0">
+            <NavLinkItem
+              to={brand.to}
+              className="text-base font-semibold text-gray-900 gap-3 !px-0"
+            >
+              {brand.logo ? (
+                <img
+                  src={brand.logo}
+                  alt={brand.label}
+                  className="h-10 w-auto object-contain shrink-0"
+                />
+              ) : null}
+              {/* Hide label on small screens */}
+              <span className="hidden lg:inline whitespace-nowrap">
+                {brand.label}
+              </span>
+            </NavLinkItem>
+          </div>
 
-          {/* Desktop center nav (bottom border hover) */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {primary.map((item) =>
               item.children?.length ? (
                 <NavDropdown
@@ -53,6 +58,7 @@ export default function Navbar() {
                   to={item.to}
                   items={item.children}
                   variant="center"
+                  mega={item.mega}
                 />
               ) : (
                 <NavLinkItem key={item.label} to={item.to} variant="center">
@@ -63,12 +69,11 @@ export default function Navbar() {
           </div>
 
           {/* Desktop right actions */}
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2 shrink-0">
             {rightActions.map((item) => {
               const Icon = item.Icon;
               const hasChildren = item.children?.length;
 
-              // Pay Rent as a button
               if (item.variant === "primary") {
                 return (
                   <NavLinkItem
@@ -86,16 +91,15 @@ export default function Navbar() {
               if (hasChildren) {
                 return (
                   <NavDropdown
-                    key={item.label}
-                    label={
-                      <span className="inline-flex items-center gap-2">
-                        {Icon ? <Icon size={18} /> : null}
-                        <span>{item.label}</span>
-                      </span>
-                    }
-                    to={item.to}
+                    label="Account"
                     items={item.children}
+                    variant="mega-right"
                     align="right"
+                    mega={{
+                      title: "Account",
+                      description: "Access portals and account tools.",
+                      // cta: { label: "Go to account", to: "/account" },
+                    }}
                   />
                 );
               }
@@ -109,20 +113,21 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Mobile toggle (cursor already implied but we force it) */}
+          {/* Mobile toggle */}
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+            className="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 cursor-pointer shrink-0"
             aria-label="Toggle menu"
             onClick={() => setMobileOpen((v) => !v)}
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
-        </div>
-      </nav>
+        </nav>
+      </Container>
 
       {mobileOpen && (
         <MobileNav
+          brand={brand}
           primary={primary}
           actions={actions}
           onNavigate={() => setMobileOpen(false)}
