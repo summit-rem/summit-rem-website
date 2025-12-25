@@ -8,47 +8,74 @@ import {
 
 export const servicesConfig = [
   {
-    id: "commercial",
+    id: "commercial-property-management",
     title: "Commercial Property Management",
-    short: "Professional management for office, retail, and mixed-use assets.",
     description:
-      "We provide full-service commercial property management focused on operational efficiency, tenant satisfaction, and long-term asset performance.",
-    image: "/src/assets/image/header_image.jpg",
-    to: "/services/commercial",
-    icon: Building2,
-    LinkText: "Know more",
+      "Full-service commercial property management focused on operational efficiency, tenant satisfaction, and long-term asset performance.",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+    to: "/services/commercial-property-management",
+    linkText: "Know more",
   },
   {
-    id: "multifamily",
+    id: "multi-family-residential-management",
     title: "Multi-Family Residential Management",
-    short: "Maximizing value across residential portfolios.",
     description:
-      "From leasing and maintenance to resident relations and financial reporting, we manage multi-family communities with precision and care.",
-    image: "/src/assets/image/header_image.jpg",
-    to: "/services/multifamily",
-    icon: Home,
-    LinkText: "Know more",
+      "Resident-first management with proactive maintenance, clear reporting, and strong onsite support designed to protect your investment.",
+    image:
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1600&q=80",
+    to: "/services/multi-family-residential-management",
+    linkText: "Know more",
   },
   {
-    id: "brokerage",
+    id: "leasing-and-brokerage",
+    title: "Leasing & Brokerage",
+    description:
+      "Marketing, showings, screening, leasing coordination, and broker services built to reduce vacancy and place qualified tenants faster.",
+    image:
+      "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1600&q=80",
+    to: "/services/leasing-and-brokerage",
+    linkText: "Know more",
+  },
+  {
+    id: "commercial-brokerage",
     title: "Commercial Brokerage",
-    short: "Strategic leasing and investment advisory.",
     description:
-      "Our brokerage team delivers data-driven insights to support leasing, acquisitions, and dispositions for commercial investors.",
-    image: "/src/assets/image/header_image.jpg",
-    to: "/services/brokerage",
-    icon: Briefcase,
-    LinkText: "Know more",
+      "Transaction support, market guidance, and negotiation expertise to help you make confident commercial real estate decisions.",
+    image:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+    to: "/services/commercial-brokerage",
+    linkText: "Know more",
   },
   {
-    id: "advisory",
+    id: "real-estate-advisory-services",
     title: "Real Estate Advisory Services",
-    short: "Market intelligence that drives decisions.",
     description:
-      "We offer valuation, market studies, and strategic advisory services to help clients make informed real estate decisions.",
-    image: "/src/assets/image/header_image.jpg",
-    to: "/services/advisory",
-    icon: LineChart,
-    LinkText: "Know more",
+      "Data-driven insights on performance, budgeting, capital planning, and strategy—so your portfolio stays resilient and profitable.",
+    image:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80",
+    to: "/services/real-estate-advisory-services",
+    linkText: "Know more",
+  },
+  {
+    id: "accounting-and-financial-reporting",
+    title: "Accounting & Financial Reporting",
+    description:
+      "Accurate statements, owner reporting, reconciliations, and transparent financial visibility—delivered on time, every time.",
+    image:
+      "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80",
+    to: "/services/accounting-and-financial-reporting",
+    linkText: "Know more",
+  },
+  {
+    id: "maintenance-and-capital-projects",
+    title: "Maintenance & Capital Projects",
+    description:
+      "Responsive repairs, preventative maintenance, and project oversight to protect property condition and keep residents satisfied.",
+    image:
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
+    to: "/services/maintenance-and-capital-projects",
+    linkText: "Know more",
   },
 ];
+
