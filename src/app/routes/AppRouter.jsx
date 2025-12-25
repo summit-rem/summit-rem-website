@@ -12,6 +12,16 @@ import PayRentPage from "../../pages/payrent/PayRentPage";
 import AccountPage from "../../pages/account/AccountPage";
 import NotFoundPage from "../../pages/not-found/NotFoundPage";
 import TeamsPage from "../../pages/team/TeamsPage";
+import ResourcesPage from "../../pages/resources/ResourcesPage";
+import ResourceDetailPage from "../../pages/resources/ResourceDetailPage";
+
+import CommercialPage from "../../pages/services/CommercialPage";
+import MultiFamilyPage from "../../pages/services/MultiFamilyPage";
+import CommercialBrokeragePage from "../../pages/services/CommercialBrokeragePage";
+import AccountingFinancialReportingPage from "../../pages/services/AccountingFinancialReportingPage";
+import LeaseManagementPage from "../../pages/services/LeaseManagementPage";
+import TenantServicesSafetyPage from "../../pages/services/TenantServicesSafetyPage";
+import TransitionStrategyPage from "../../pages/services/TransitionStrategyPage";
 
 
 export const router = createBrowserRouter([
@@ -28,6 +38,20 @@ export const router = createBrowserRouter([
       { path: "pay-rent", element: <PayRentPage /> },
       { path: "account", element: <AccountPage /> },
       { path: "about/team", element: <TeamsPage /> },
+      { path: "resources", element: <ResourcesPage /> },
+      { path: "articles/:id/:slug", element: <ResourceDetailPage />,},
+      { path: "podcast/:id/:slug", element: <ResourceDetailPage /> },
+      { path: "videos/:id/:slug", element: <ResourceDetailPage /> },
+      { path: "news/:id/:slug", element: <ResourceDetailPage /> },
+
+      { path: "commercial", element: <CommercialPage /> },
+      { path: "multi-family", element: <MultiFamilyPage /> },
+      { path: "commercial-brokerage", element: <CommercialBrokeragePage /> },
+      { path: "accounting-financial-reporting", element: <AccountingFinancialReportingPage /> },
+      { path: "lease-management", element: <LeaseManagementPage /> },
+      { path: "tenant-services-and-safety", element: <TenantServicesSafetyPage /> },
+      { path: "transition-strategy", element: <TransitionStrategyPage /> },
+
 
       { path: "*", element: <NotFoundPage /> },
     ],
