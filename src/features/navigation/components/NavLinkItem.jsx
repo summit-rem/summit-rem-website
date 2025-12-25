@@ -5,20 +5,42 @@ const base =
   "inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 cursor-pointer";
 
 const variants = {
-  center:
-    "border-b-2 border-transparent hover:border-[var(--color-burgundy)]",
-
+  center: "border-b-2 border-transparent hover:border-[var(--color-burgundy)]",
   primary:
     "rounded-md bg-[var(--color-burgundy)] text-white hover:text-white hover:opacity-90 border-b-0",
 };
 
 export default function NavLinkItem({
   to,
+  href,
+  external,
   children,
   className = "",
   onClick,
   variant,
+  target,
 }) {
+  const isExternal =
+    external || (typeof href === "string" && /^https?:\/\//i.test(href));
+
+  const classes = `${base} ${variants[variant] ?? ""} ${className}`;
+
+  // ✅ External links (AppFolio)
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        onClick={onClick}
+        className={classes}
+        target={target ?? "_blank"}
+        rel="noopener noreferrer"
+      >
+        {children}
+      </a>
+    );
+  }
+
+  // ✅ Internal links (React Router)
   return (
     <NavLink
       to={to}
@@ -29,9 +51,7 @@ export default function NavLinkItem({
             ? "border-[var(--color-burgundy)] text-gray-900"
             : "text-gray-900";
 
-        return `${base} ${variants[variant] ?? ""} ${
-          isActive ? activeClass : ""
-        } ${className}`;
+        return `${classes} ${isActive ? activeClass : ""}`;
       }}
     >
       {children}

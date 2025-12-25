@@ -81,6 +81,8 @@ export default function Navbar() {
                     to={item.to}
                     variant="primary"
                     className="px-4"
+                    href={item.href}
+                    external={item.external}
                   >
                     {Icon ? <Icon size={18} /> : null}
                     <span>{item.label}</span>

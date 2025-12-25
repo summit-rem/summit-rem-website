@@ -53,8 +53,9 @@ function MobileAccordionItem({ item, onNavigate }) {
 
           {item.children.map((child) => (
             <NavLinkItem
-              key={`${child.label}-${child.to}`}
               to={child.to}
+              href={child.href}
+              external={child.external}
               onClick={onNavigate}
               className="w-full justify-start"
             >

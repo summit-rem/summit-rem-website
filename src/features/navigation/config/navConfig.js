@@ -1,3 +1,6 @@
+const APPFOLIO_URL =
+  "https://account.appfolio.com/realms/foliospace/protocol/openid-connect/auth?activation_state&client_id=client-8dad6c3d7c1270dc69fd987720422a89d0affc33&portfolio_uuid&redirect_uri=https%3A%2F%2Fsummitrem.appfolio.com%2Fconnect%2Fusers%2Foauth%2Fcallback&response_type=code&scope=openid+offline_access&session_timed_out=false&state";
+
 export const navConfig = {
   brand: {
     // label: "Summit Real Estate Management",
@@ -49,32 +52,42 @@ export const navConfig = {
       ],
     },
     { label: "Contact Us", to: "/contact" },
-    { label: "Resources", to: "/Resources" },
+    { label: "Resources", to: "/resources" },
   ],
 
   actions: [
-    { label: "Pay Rent", to: "/pay-rent", icon: "CreditCard", variant: "primary" },
+    {
+      label: "Pay Rent",
+      href: APPFOLIO_URL,
+      external: true,
+      icon: "CreditCard",
+      variant: "primary",
+    },
     {
       label: "Account",
       icon: "User",
       mega: {
         title: "Account",
         description: "Access portals and account tools.",
-        hideView: true, // NEW: removes the "View →" link in right panel
+        hideView: false,
+        cta: {
+          label: "Open Account Portal",
+          href: APPFOLIO_URL,
+          external: true,
+        },
       },
       children: [
         {
           label: "Online Portal",
-          // remove to to avoid "View" even if hideView isn't applied
           children: [
-            { label: "Resident Portal", to: "/account#resident" },
-            { label: "Pay Rent", to: "/pay-rent" },
+            { label: "Resident Portal", href: APPFOLIO_URL, external: true },
+            { label: "Pay Rent", href: APPFOLIO_URL, external: true },
           ],
         },
         {
           label: "Owner Portal",
           children: [
-            { label: "Owner Login", to: "/account#owner" },
+            { label: "Owner Login", href: APPFOLIO_URL, external: true },
             { label: "Statements & Reports", to: "/account#statements" },
           ],
         },

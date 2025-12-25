@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ArrowRight, ChevronRight } from "lucide-react";
+import NavLinkItem from "./NavLinkItem";
 
 export default function NavMegaMenu({ item, onNavigate, align = "center", width = "w-[980px]" }) {
   const children = item?.children || [];
@@ -39,14 +40,15 @@ export default function NavMegaMenu({ item, onNavigate, align = "center", width 
             ) : null}
 
             {mega.cta?.to ? (
-              <NavLink
-                to={mega.cta.to}
-                onClick={onNavigate}
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--color-burgundy)] px-5 py-3 text-sm font-medium text-white hover:opacity-90 transition"
+              <NavLinkItem
+                to={mega.cta?.to}
+                href={mega.cta?.href}
+                external={mega.cta?.external}
+                className="mt-6 inline-flex ..."
               >
                 {mega.cta.label || "Learn more"}
                 <ArrowRight size={16} />
-              </NavLink>
+              </NavLinkItem>
             ) : null}
           </div>
 
@@ -115,17 +117,16 @@ export default function NavMegaMenu({ item, onNavigate, align = "center", width 
                 <ul className="space-y-2">
                   {rightItems.map((r) => (
                     <li key={`${r.label}-${r.to}`}>
-                      <NavLink
+                      <NavLinkItem
                         to={r.to}
+                        href={r.href}
+                        external={r.external}
                         onClick={onNavigate}
                         className="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-white transition"
                       >
                         <span className="group-hover:text-black">{r.label}</span>
-                        <ArrowRight
-                          size={16}
-                          className="text-gray-400 group-hover:text-[var(--color-burgundy)] transition"
-                        />
-                      </NavLink>
+                        <ArrowRight size={16} className="..." />
+                      </NavLinkItem>
                     </li>
                   ))}
                 </ul>

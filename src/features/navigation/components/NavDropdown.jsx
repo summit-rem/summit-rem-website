@@ -93,6 +93,8 @@ export default function NavDropdown({
               <NavLinkItem
                 key={`${item.label}-${item.to}`}
                 to={item.to}
+                href={item.href}
+                external={item.external}
                 onClick={() => {
                   setOpen(false);
                   onNavigate?.();
