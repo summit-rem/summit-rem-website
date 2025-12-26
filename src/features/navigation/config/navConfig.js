@@ -1,11 +1,12 @@
+import Logo from "../../../assets/image/signature-block.jpg";
+
 const APPFOLIO_URL =
   "https://account.appfolio.com/realms/foliospace/protocol/openid-connect/auth?activation_state&client_id=client-8dad6c3d7c1270dc69fd987720422a89d0affc33&portfolio_uuid&redirect_uri=https%3A%2F%2Fsummitrem.appfolio.com%2Fconnect%2Fusers%2Foauth%2Fcallback&response_type=code&scope=openid+offline_access&session_timed_out=false&state";
 
 export const navConfig = {
   brand: {
-    // label: "Summit Real Estate Management",
     to: "/",
-    logo: "/src/assets/image/signature-block.jpg",
+    logo: Logo,
   },
 
   primary: [
