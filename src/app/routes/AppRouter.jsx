@@ -22,6 +22,9 @@ import AccountingFinancialReportingPage from "../../pages/services/AccountingFin
 import LeaseManagementPage from "../../pages/services/LeaseManagementPage";
 import TenantServicesSafetyPage from "../../pages/services/TenantServicesSafetyPage";
 import TransitionStrategyPage from "../../pages/services/TransitionStrategyPage";
+import PrivacyPolicyPage from "../../pages/legal/PrivacyPolicyPage";
+import TermsOfServicePage from "../../pages/legal/TermsOfServicePage";
+import CookiePolicyPage from "../../pages/legal/CookiePolicyPage";
 
 
 export const router = createBrowserRouter([
@@ -51,6 +54,9 @@ export const router = createBrowserRouter([
       { path: "lease-management", element: <LeaseManagementPage /> },
       { path: "tenant-services-and-safety", element: <TenantServicesSafetyPage /> },
       { path: "transition-strategy", element: <TransitionStrategyPage /> },
+      { path: "privacy-policy", element: <PrivacyPolicyPage /> },
+      { path: "terms-and-conditions", element: <TermsOfServicePage /> },
+      { path: "cookie-policy", element: <CookiePolicyPage /> },
 
 
       { path: "*", element: <NotFoundPage /> },
