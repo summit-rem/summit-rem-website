@@ -11,7 +11,7 @@ export const servicesConfig = [
     id: "commercial-property-management",
     title: "Commercial Property Management",
     description:
-      "Full-service commercial property management focused on operational efficiency, tenant satisfaction, and long-term asset performance.",
+      "Summit manages office, retail, and industrial properties through disciplined systems and consistent oversight. Our approach emphasizes compliance, preventative maintenance, vendor coordination, and clear reporting. These practices support stable operations, protect asset value, and reduce friction for owners over time consistently.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
     to: "/services/commercial-property-management",
@@ -21,7 +21,7 @@ export const servicesConfig = [
     id: "multi-family-residential-management",
     title: "Multi-Family Residential Management",
     description:
-      "Resident-first management with proactive maintenance, clear reporting, and strong onsite support designed to protect your investment.",
+      "Our multifamily services support apartment communities through structured daily operations and consistent execution. Defined procedures guide leasing, maintenance, resident communication, and financial reporting. This approach creates stability, protects ownership objectives, and supports long-term asset performance for owners over time consistently.",
     image:
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1600&q=80",
     to: "/services/multi-family-residential-management",
@@ -31,7 +31,7 @@ export const servicesConfig = [
     id: "leasing-and-brokerage",
     title: "Leasing & Brokerage",
     description:
-      "Marketing, showings, screening, leasing coordination, and broker services built to reduce vacancy and place qualified tenants faster.",
+      "Our leasing and brokerage services support occupancy through structured processes and market-aware coordination. We assist with property positioning, marketing efforts, and leasing execution aligned with ownership goals. This approach helps attract qualified tenants and reduce downtime across diverse property portfolios.",
     image:
       "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1600&q=80",
     to: "/services/leasing-and-brokerage",
@@ -41,7 +41,7 @@ export const servicesConfig = [
     id: "commercial-brokerage",
     title: "Commercial Brokerage",
     description:
-      "Transaction support, market guidance, and negotiation expertise to help you make confident commercial real estate decisions.",
+      "Summit provides commercial brokerage services informed by operational experience and market insight. We assist owners with leasing strategies and transaction considerations aligned with asset objectives. Structured analysis and coordination support clarity, reduce risk, and promote informed outcomes for long-term planning.",
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
     to: "/services/commercial-brokerage",
@@ -51,7 +51,7 @@ export const servicesConfig = [
     id: "real-estate-advisory-services",
     title: "Real Estate Advisory Services",
     description:
-      "Data-driven insights on performance, budgeting, capital planning, and strategy—so your portfolio stays resilient and profitable.",
+      "Our advisory services support owners through thoughtful evaluation of operational, financial, and strategic considerations. Guidance is grounded in real-world management experience and practical insight. This structured approach helps clients assess performance, manage risk, and plan confidently for long-term ownership decisions.",
     image:
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80",
     to: "/services/real-estate-advisory-services",
@@ -61,7 +61,7 @@ export const servicesConfig = [
     id: "accounting-and-financial-reporting",
     title: "Accounting & Financial Reporting",
     description:
-      "Accurate statements, owner reporting, reconciliations, and transparent financial visibility—delivered on time, every time.",
+      "Summit delivers accounting and financial reporting through defined procedures and consistent controls. Our approach emphasizes accuracy, documentation, and timely communication. Clear reports provide insight into performance, support compliance, and enable confident decision-making for owners across commercial and multifamily portfolios consistently.",
     image:
       "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80",
     to: "/services/accounting-and-financial-reporting",
@@ -71,7 +71,7 @@ export const servicesConfig = [
     id: "maintenance-and-capital-projects",
     title: "Maintenance & Capital Projects",
     description:
-      "Responsive repairs, preventative maintenance, and project oversight to protect property condition and keep residents satisfied.",
+      "Summit oversees maintenance operations and capital projects using structured planning and coordinated execution. Preventative strategies, vendor oversight, and quality control protect asset conditions. This disciplined approach controls costs, supports operations, and preserves long-term property value for owners over time consistently.",
     image:
       "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
     to: "/services/maintenance-and-capital-projects",

@@ -19,7 +19,7 @@ export default function Services() {
           </p>
 
           <h2 className="text-4xl font-semibold mb-10">
-            Expert Care for Every Asset Type
+            How We Support Property Ownership
           </h2>
 
           <div className="space-y-1">
