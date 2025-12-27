@@ -1,20 +1,20 @@
 export const contactConfig = {
   hero: {
     title: "Contact our friendly team",
-    subtitle: "Let us know how we can help.",
+    subtitle: "Reach out using the option that works best for you.",
     logo: "/src/assets/image/signature_logo2.jpg",
   },
 
   cards: [
     {
-      title: "Chat to sales",
-      description: "Speak to our sales team.",
+      title: "Chat to Support",
+      description: "Quick support for general questions, existing clients, or next steps.",
       icon: "MessageCircle",
       action: { type: "email", label: "sales@summit-res.com", value: "sales@summit-res.com" },
     },
     {
-      title: "Chat to support",
-      description: "We’re here to help.",
+      title: "Email US",
+      description: "Send detailed questions and receive a thoughtful response from our team.",
       icon: "LifeBuoy",
       action: { type: "email", label: "francie@summit-res.com", value: "francie@summit-res.com" },
     },
@@ -30,9 +30,9 @@ export const contactConfig = {
     },
     {
       title: "Call us",
-      description: "Mon–Fri from 8am to 5pm.",
+      description: "Speak directly with our team for timely answers and guidance.",
       icon: "Phone",
-      action: { type: "phone", label: "301-670-0980", value: "3016700980" },
+      action: { type: "phone", label: "", value: "" },
     },
   ],
 
