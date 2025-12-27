@@ -79,19 +79,19 @@ const RESOURCES = [
   },
   {
     id: "f3",
-    type: "videos",
+    type: "articles",
     uploaderName: "Summit Video Team",
     uploaderPhotoURL:
       "https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=1400&q=80",
     dateOfUpload: "Mar 08, 2025",
     title: "Commercial Walkthrough: What We Inspect Every Month",
-    tag: "Featured Video",
+    tag: "Featured Article",
     subtitle:
       "A quick walkthrough of the monthly inspection checklist for commercial properties.",
     description:
       "See how routine inspections catch issues early and protect asset performance over the long term.",
     duration: "07:32",
-    media: img.video,
+    media: img.city,
   },
 
   // ARTICLES
