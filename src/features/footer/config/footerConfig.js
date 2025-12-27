@@ -49,8 +49,9 @@ export const footerConfig = {
     copyright:
       "© 2025 Summit Real Estate Management Services. All rights reserved. | License #01049566",
     legal: [
-      { label: "Privacy Policy", to: "/privacy" },
-      { label: "Terms of Service", to: "/terms" },
+      { label: "Privacy Policy", to: "/privacy-policy" },
+      { label: "Terms of Service", to: "/terms-and-conditions" },
+      { label: "cookie-policy", to: "/cookie-policy" },
     ],
     socials: [
       { label: "Facebook", href: "#", icon: "Facebook" },
