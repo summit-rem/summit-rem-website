@@ -6,9 +6,9 @@ export const footerConfig = {
     logo: SignatureLogo,
     description:
       "Professional property management services for commercial and multi-family properties since 2000.",
-    addressLines: ["123 Main Street, Suite 100", "Los Angeles, CA 90012"],
-    phone: "(555) 123-4567",
-    email: "info@summitrealestate.com",
+    addressLines: ["Summit Real Estate Management Services Inc", "2205 Plaza Drive, Suite 100 Rocklin, CA 95765 ", "Los Angeles, CA 90012"],
+    phone: "916.960.5700",
+    email: "hello@summit-rem.com",
   },
 
   columns: [
