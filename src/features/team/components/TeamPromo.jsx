@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import HeaderImage from '../../../assets/image/header_image.jpg';
 
 export default function TeamPromo() {
   return (
@@ -15,8 +16,8 @@ export default function TeamPromo() {
 
             {/* NOTE: keeping same text + color as requested */}
             <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-black">
-              Meet our team <br className="hidden md:block" />
-              of property management experts.
+              A team built <br className="hidden md:block" />
+              on experience and accountability.
             </h2>
           </div>
 
@@ -24,10 +25,7 @@ export default function TeamPromo() {
           <div className="lg:col-span-5">
             {/* Longer copy (same tone), constrained to feel ~half image length */}
             <p className="max-w-xl text-gray-600 text-base leading-relaxed">
-              A dedicated team focused on performance, service, and long-term
-              value. Meet the professionals who manage your property with
-              precision and care—bringing responsive communication, reliable
-              oversight, and thoughtful solutions that protect your investment.
+              Our team brings decades of property management experience across commercial and multifamily assets. We work within clear systems and defined standards to deliver consistent oversight, reliable communication, and thoughtful solutions—so ownership feels informed, supported, and steady over time.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -49,24 +47,22 @@ export default function TeamPromo() {
             {/* Left image ~50% */}
             <div className="w-[56%] overflow-hidden rounded-3xl bg-gray-100 ring-1 ring-black/5">
               <img
-                src="/src/assets/image/header_image.jpg"
+                src={HeaderImage}
                 alt="Summit team"
                 className="h-[360px] w-full object-cover"
               />
             </div>
 
-            {/* Right overlapping image ~50% */}
             <div className="absolute right-0 top-1/2 w-[56%] -translate-y-1/2">
               <div className="overflow-hidden rounded-3xl bg-white shadow-[0_18px_50px_rgba(0,0,0,0.12)] ring-1 ring-black/5">
                 <img
-                  src="/src/assets/image/not_found_image.jpg"
+                  src={HeaderImage}
                   alt="Summit staff"
                   className="h-[320px] w-full object-cover"
                 />
               </div>
             </div>
 
-            {/* Spacer to prevent overlap clipping */}
             <div className="h-[120px]" />
           </div>
 
@@ -74,7 +70,7 @@ export default function TeamPromo() {
           <div className="md:hidden grid gap-6">
             <div className="overflow-hidden rounded-3xl bg-gray-100 ring-1 ring-black/5">
               <img
-                src="/src/assets/image/header_image.jpg"
+                src={HeaderImage}
                 alt="Summit team"
                 className="h-[260px] w-full object-cover"
               />
@@ -82,7 +78,7 @@ export default function TeamPromo() {
 
             <div className="overflow-hidden rounded-3xl bg-white shadow-[0_18px_50px_rgba(0,0,0,0.12)] ring-1 ring-black/5">
               <img
-                src="/src/assets/image/not_found_image.jpg"
+                src={HeaderImage}
                 alt="Summit staff"
                 className="h-[240px] w-full object-cover"
               />
