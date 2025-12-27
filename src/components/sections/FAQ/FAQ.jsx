@@ -16,28 +16,28 @@ export default function FAQ({
   const fallbackItems = useMemo(
     () => [
       {
-        q: "Is there a free trial available?",
-        a: "Yes — we can provide a short trial to evaluate fit. Contact support and we’ll set it up.",
+        q: "How do you support commercial property owners?",
+        a: "We provide structured management, clear reporting, and proactive oversight, allowing owners to reduce involvement, maintain compliance, and achieve stable performance across their commercial and multifamily properties.",
       },
       {
-        q: "Can I change my plan later?",
-        a: "Yes. You can upgrade or downgrade anytime based on your portfolio needs.",
+        q: "Do you manage both commercial and residential properties?",
+        a: "Yes. Summit manages commercial, multifamily, owners’ association, and mobile home park properties, applying consistent systems and documented standards across each property type we support.",
       },
       {
         q: "How quickly can you onboard a new property?",
-        a: "Most properties can be onboarded within 7–14 days depending on documentation, inspections, and access setup.",
+        a: "Onboarding timelines vary by property type and complexity, but our structured onboarding process allows for an efficient transition while ensuring records, systems, and responsibilities are properly established.",
       },
       {
-        q: "Do you manage both commercial and residential?",
-        a: "Yes. We manage commercial assets and multi-family residential properties with dedicated teams and reporting.",
+        q: "What reporting will owners receive regularly?",
+        a: "Owners receive clear financial statements, operational updates, and supporting documentation on a consistent schedule, providing transparency into property performance without unnecessary complexity or frequent follow-ups.",
       },
       {
-        q: "What reports will I receive as an owner?",
-        a: "You’ll receive monthly financial statements, rent roll summaries, maintenance updates, and year-end reporting as needed.",
+        q: "How are maintenance issues handled and tracked?",
+        a: "Maintenance requests are managed through defined procedures, vendor coordination, and documented tracking, allowing issues to be addressed promptly while maintaining oversight, quality control, and cost accountability.",
       },
       {
-        q: "How do I pay rent or request maintenance?",
-        a: "Residents can use the online portal to pay rent securely and submit maintenance requests with status updates.",
+        q: "Who will be my primary point contact?",
+        a: "Each property is assigned a dedicated management contact responsible for communication, coordination, and oversight, ensuring owners know who to reach and receive consistent, reliable responses.",
       },
     ],
     []
