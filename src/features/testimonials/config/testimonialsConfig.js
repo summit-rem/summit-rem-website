@@ -1,7 +1,7 @@
 export const testimonialsConfig = {
-  heading: "Trusted by Northern California Property Owners & Investors for Over 20 Years",
+  heading: "Trusted by property owners and investors for over two decades.",
   subheading:
-    "Managing millions of square feet of commercial space and hundreds of multi-family units, we deliver exceptional returns, proactive management, and peace of mind for our clients.",
+    "Real feedback from property owners and investors who rely on Summit for consistent management, clear communication, and dependable results across commercial and multifamily properties.",
 
   testimonials: [
     {
