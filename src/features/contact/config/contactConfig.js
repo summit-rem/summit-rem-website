@@ -7,36 +7,38 @@ export const contactConfig = {
     logo: SignatureLogo2,
   },
 
-  cards: [
+    cards: [
+    {
+      title: "Call Us",
+      description: "Speak directly with our team for timely answers and guidance.",
+      icon: "Phone",
+      action: { type: "phone", label: "916.960.5700", value: "9169605700" },
+    },
+    {
+      title: "Email Us",
+      description: "Send detailed questions and receive a thoughtful response from our team.",
+      icon: "Mail",
+      action: { type: "email", label: "hello@summit-rem.com", value: "hello@summit-rem.com" },
+    },
     {
       title: "Chat to Support",
       description: "Quick support for general questions, existing clients, or next steps.",
       icon: "MessageCircle",
-      action: { type: "email", label: "sales@summit-res.com", value: "sales@summit-res.com" },
+      action: { type: "email", label: "hello@summit-rem.com", value: "hello@summit-rem.com" },
     },
     {
-      title: "Email US",
-      description: "Send detailed questions and receive a thoughtful response from our team.",
-      icon: "LifeBuoy",
-      action: { type: "email", label: "francie@summit-res.com", value: "francie@summit-res.com" },
-    },
-    {
-      title: "Visit us",
-      description: "Visit our office HQ.",
+      title: "Visit Us",
+      description: "Meet our team in person during regular business hours.",
       icon: "MapPin",
       action: {
         type: "link",
         label: "View on Google Maps",
-        value: "https://www.google.com/maps/search/?api=1&query=7728+Warbler+Lane,+Rockville,+MD+20855",
+        value:
+          "https://www.google.com/maps/search/?api=1&query=2205+Plaza+Drive,+Suite+100,+Rocklin,+CA+95765",
       },
     },
-    {
-      title: "Call us",
-      description: "Speak directly with our team for timely answers and guidance.",
-      icon: "Phone",
-      action: { type: "phone", label: "", value: "" },
-    },
   ],
+
 
   faqs: [
   {
