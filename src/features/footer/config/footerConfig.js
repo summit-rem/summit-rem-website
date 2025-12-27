@@ -1,7 +1,9 @@
+import SignatureLogo from "../../../assets/image/signature_logo2.jpg";
+
 export const footerConfig = {
   brand: {
     title: "Summit Real Estate Management",
-    logo: "/src/assets/image/signature_logo2.jpg",
+    logo: SignatureLogo,
     description:
       "Professional property management services for commercial and multi-family properties since 2000.",
     addressLines: ["123 Main Street, Suite 100", "Los Angeles, CA 90012"],
