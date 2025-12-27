@@ -1,3 +1,5 @@
+import NotFound from "../../../assets/image/not_found_image.jpg"
+
 export const aboutConfig = {
   hero: {
     eyebrow: "Explore your real estate dream into reality.",
@@ -20,7 +22,7 @@ export const aboutConfig = {
   },
 
   image: {
-    src: "/src/assets/image/not_found_image.jpg", // replace later with a real about image
+    src: NotFound,
     alt: "Modern home exterior at sunset",
   },
 
