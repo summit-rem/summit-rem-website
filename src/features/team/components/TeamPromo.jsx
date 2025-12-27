@@ -29,7 +29,7 @@ export default function TeamPromo() {
               Our team brings decades of property management experience across commercial and multifamily assets. We work within clear systems and defined standards to deliver consistent oversight, reliable communication, and thoughtful solutions—so ownership feels informed, supported, and steady over time.
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            {/* <div className="mt-6 flex flex-wrap gap-3">
               <NavLink
                 to="/about/team"
                 className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white bg-[var(--color-burgundy)] hover:opacity-90 transition"
@@ -37,7 +37,7 @@ export default function TeamPromo() {
                 Meet our team
                 <ArrowRight size={16} />
               </NavLink>
-            </div>
+            </div> */}
           </div>
         </div>
 
