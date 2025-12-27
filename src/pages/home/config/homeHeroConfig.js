@@ -1,12 +1,14 @@
+import HeaderImage from '../../../assets/image/header_image.jpg';
+
 export const homeHeroConfig = {
   pill: "Summit Real Estate Management",
   title: {
-    before: "Building Great",
-    highlight: "Relationships",
-    after: "Through Exceptional Management",
+    before: "Less Stress. Better",
+    highlight: "Managed",
+    after: ".",
   },
   subtitle:
-    'At Summit Real Estate Management Services, "Building Great Relationships" is more than a tagline — it’s how we protect and grow your real estate investment.',
+    'Professional Commercial & Multifamily Property Management Since 2000.',
   primaryCta: { label: "Login", to: "/account" },
 
   cards: {
@@ -15,23 +17,23 @@ export const homeHeroConfig = {
       value: "4.8",
       caption: "Trusted by owners & residents across our communities.",
       cta: "View testimonials",
-      to: "/about#testimonials",
+      to: "#testimonials",
     },
     team: {
       title: "Meet our team",
       caption:
-        "Experienced professionals focused on service, reporting, and long-term value.",
+        "Experienced professionals focused on structured management, clear reporting, and long-term value.",
       cta: "See our team",
       to: "/about/team",
     },
   },
 
   heroImage: {
-    src: "/src/assets/image/header_image.jpg",
+    src: HeaderImage,
     alt: "Featured property",
     badge: "Professional Property Management",
-    note: "Elevating real estate experiences for owners and residents alike.",
-    title: "Meet the people and principles behind Summit.",
+    note: "Since 2000, Summit has delivered structured, disciplined property management built to reduce friction and protect long-term value.",
+    title: "Experience That Shows",
     storyTo: "/about/story",
     storyLabel: "Our story"
   },
