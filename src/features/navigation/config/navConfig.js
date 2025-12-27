@@ -49,7 +49,7 @@ export const navConfig = {
       label: "About Us",
       children: [
         { label: "Our Story", to: "/about" },
-        { label: "Our Team", to: "/about/team" },
+        // { label: "Our Team", to: "/about/team" },
       ],
     },
     { label: "Contact Us", to: "/contact" },
