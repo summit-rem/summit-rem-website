@@ -21,15 +21,15 @@ export const navConfig = {
         cta: { label: "View all listings", to: "/properties" },
       },
       children: [
-        {
-          label: "View Properties",
-          to: "/properties",
-          children: [
-            { label: "Commercial", to: "/properties?type=commercial" },
-            { label: "Multi-Family Residential", to: "/properties?type=multi-family" },
-            { label: "Retail", to: "/properties?type=retail" },
-          ],
-        },
+        // {
+        //   label: "View Properties",
+        //   to: "/properties",
+        //   children: [
+        //     { label: "Commercial", to: "/properties?type=commercial" },
+        //     { label: "Multi-Family Residential", to: "/properties?type=multi-family" },
+        //     { label: "Retail", to: "/properties?type=retail" },
+        //   ],
+        // },
         { label: "View Vacancies", to: "/vacancies" },
       ],
     },
@@ -53,7 +53,7 @@ export const navConfig = {
       ],
     },
     { label: "Contact Us", to: "/contact" },
-    { label: "Resources", to: "/resources" },
+    // { label: "Resources", to: "/resources" },
   ],
 
   actions: [
@@ -89,7 +89,7 @@ export const navConfig = {
           label: "Owner Portal",
           children: [
             { label: "Owner Login", href: APPFOLIO_URL, external: true },
-            { label: "Statements & Reports", to: "/account#statements" },
+            // { label: "Statements & Reports", to: "/account#statements" },
           ],
         },
       ],
