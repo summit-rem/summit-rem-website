@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import HeaderImage from '../../../assets/image/header_image.jpg';
+import Team from '../../../assets/image/team.jpg';
+import Team1 from '../../../assets/image/team1.jpg';
 
 export default function TeamPromo() {
   return (
@@ -47,7 +48,7 @@ export default function TeamPromo() {
             {/* Left image ~50% */}
             <div className="w-[56%] overflow-hidden rounded-3xl bg-gray-100 ring-1 ring-black/5">
               <img
-                src={HeaderImage}
+                src={Team}
                 alt="Summit team"
                 className="h-[360px] w-full object-cover"
               />
@@ -56,7 +57,7 @@ export default function TeamPromo() {
             <div className="absolute right-0 top-1/2 w-[56%] -translate-y-1/2">
               <div className="overflow-hidden rounded-3xl bg-white shadow-[0_18px_50px_rgba(0,0,0,0.12)] ring-1 ring-black/5">
                 <img
-                  src={HeaderImage}
+                  src={Team1}
                   alt="Summit staff"
                   className="h-[320px] w-full object-cover"
                 />
@@ -70,7 +71,7 @@ export default function TeamPromo() {
           <div className="md:hidden grid gap-6">
             <div className="overflow-hidden rounded-3xl bg-gray-100 ring-1 ring-black/5">
               <img
-                src={HeaderImage}
+                src={Team}
                 alt="Summit team"
                 className="h-[260px] w-full object-cover"
               />
@@ -78,7 +79,7 @@ export default function TeamPromo() {
 
             <div className="overflow-hidden rounded-3xl bg-white shadow-[0_18px_50px_rgba(0,0,0,0.12)] ring-1 ring-black/5">
               <img
-                src={HeaderImage}
+                src={Team1}
                 alt="Summit staff"
                 className="h-[240px] w-full object-cover"
               />

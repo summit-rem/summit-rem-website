@@ -1,4 +1,4 @@
-import NotFound from "../../../assets/image/not_found_image.jpg"
+import AboutProperty from "../../../assets/image/aboutProperty.jpg"
 
 export const aboutConfig = {
   hero: {
@@ -22,7 +22,7 @@ export const aboutConfig = {
   },
 
   image: {
-    src: NotFound,
+    src: AboutProperty,
     alt: "Modern home exterior at sunset",
   },
 
