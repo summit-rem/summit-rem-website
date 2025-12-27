@@ -1,8 +1,10 @@
+import SignatureLogo2 from "../../../assets/image/signature_logo2.jpg";
+
 export const contactConfig = {
   hero: {
     title: "Contact our friendly team",
     subtitle: "Reach out using the option that works best for you.",
-    logo: "/src/assets/image/signature_logo2.jpg",
+    logo: SignatureLogo2,
   },
 
   cards: [
