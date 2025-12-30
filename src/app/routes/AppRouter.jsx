@@ -25,6 +25,10 @@ import TransitionStrategyPage from "../../pages/services/TransitionStrategyPage"
 import PrivacyPolicyPage from "../../pages/legal/PrivacyPolicyPage";
 import TermsOfServicePage from "../../pages/legal/TermsOfServicePage";
 import CookiePolicyPage from "../../pages/legal/CookiePolicyPage";
+import MaintenanceAndCapitalProjects from "../../pages/services/MaintenanceAndCapitalProjects";
+import OwnersAssociationManagement from "../../pages/services/OwnersAssociationManagement";
+import RealEstateAdvisoryServices from "../../pages/services/RealEstateAdvisoryServices";
+import MobileHomeParkManagement from "../../pages/services/MobileHomeParkManagement";
 
 
 export const router = createBrowserRouter([
@@ -52,8 +56,13 @@ export const router = createBrowserRouter([
       { path: "commercial-brokerage", element: <CommercialBrokeragePage /> },
       { path: "accounting-financial-reporting", element: <AccountingFinancialReportingPage /> },
       { path: "lease-management", element: <LeaseManagementPage /> },
-      { path: "tenant-services-and-safety", element: <TenantServicesSafetyPage /> },
-      { path: "transition-strategy", element: <TransitionStrategyPage /> },
+      { path: "maintenance-and-capital-projects", element: <MaintenanceAndCapitalProjects /> },
+      { path: "owners-association-management", element: <OwnersAssociationManagement /> },
+      { path: "real-estate-advisory-services", element: <RealEstateAdvisoryServices /> },
+      { path: "mobile-Home-park-management", element: <MobileHomeParkManagement /> },
+
+      // { path: "tenant-services-and-safety", element: <TenantServicesSafetyPage /> },
+      // { path: "transition-strategy", element: <TransitionStrategyPage /> },
       { path: "privacy-policy", element: <PrivacyPolicyPage /> },
       { path: "terms-and-conditions", element: <TermsOfServicePage /> },
       { path: "cookie-policy", element: <CookiePolicyPage /> },
