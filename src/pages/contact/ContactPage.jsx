@@ -5,6 +5,8 @@ import FAQ from "../../components/sections/FAQ/FAQ";
 import CTA from "../../components/sections/CTA/CTA";
 import SectionBackground from "../../components/ui/SectionBackground";
 import Container from "../../components/ui/Container";
+import ResourcesPromo from "../../components/sections/ResourcesPromo/ResourcesPromo";
+
 
 export default function ContactPage() {
   const { hero, cards, faqs, cta } = contactConfig;
@@ -31,8 +33,10 @@ export default function ContactPage() {
         </Container>
       </section>
 
+      <ResourcesPromo />
+
       <FAQ items={faqs} />
-      <CTA {...cta} />
+      {/* <CTA {...cta} /> */}
     </div>
   );
 }
