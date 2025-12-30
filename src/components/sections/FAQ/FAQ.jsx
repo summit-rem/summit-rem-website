@@ -1,16 +1,10 @@
+// src/components/sections/FAQ/FAQ.jsx
 import React, { useMemo, useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-/**
- * FAQ
- * - Desktop: 2 independent columns (prevents "row height" gaps when one item is expanded)
- * - Mobile: 1 column
- * - First item open by default
- * - Single-open behavior (opening one closes others)
- */
 export default function FAQ({
   title = "Frequently asked questions",
-  items,
+  items = [], // Will use fallback if none provided
   className = "",
 }) {
   const fallbackItems = useMemo(
@@ -24,83 +18,61 @@ export default function FAQ({
         a: "Yes. Summit manages commercial, multifamily, owners’ association, and mobile home park properties, applying consistent systems and documented standards across each property type we support.",
       },
       {
-        q: "How quickly can you onboard a new property?",
-        a: "Onboarding timelines vary by property type and complexity, but our structured onboarding process allows for an efficient transition while ensuring records, systems, and responsibilities are properly established.",
+        q: "What reporting will owners receive regularly?",
+        a: "Owners receive monthly financial reports, operational summaries, and performance reviews on a consistent schedule. Reports are clear, documented, and designed to provide visibility without requiring daily follow-up.",
       },
       {
-        q: "What reporting will owners receive regularly?",
-        a: "Owners receive clear financial statements, operational updates, and supporting documentation on a consistent schedule, providing transparency into property performance without unnecessary complexity or frequent follow-ups.",
+        q: "Who will be my primary point of contact?",
+        a: "Each owner is assigned a dedicated property manager as their primary contact. This individual oversees day-to-day operations, coordinates with teams, and serves as the main point for communication and decision-making.",
+      },
+      {
+        q: "How quickly can a new property onboard?",
+        a: "Onboarding timelines vary by property type and complexity, but our structured onboarding process allows for an efficient transition while ensuring records, systems, and responsibilities are properly transferred and documented.",
       },
       {
         q: "How are maintenance issues handled and tracked?",
-        a: "Maintenance requests are managed through defined procedures, vendor coordination, and documented tracking, allowing issues to be addressed promptly while maintaining oversight, quality control, and cost accountability.",
-      },
-      {
-        q: "Who will be my primary point contact?",
-        a: "Each property is assigned a dedicated management contact responsible for communication, coordination, and oversight, ensuring owners know who to reach and receive consistent, reliable responses.",
+        a: "Maintenance requests are tracked through a centralized system with defined response protocols. Preventative schedules, vendor coordination, and quality checks ensure issues are addressed promptly and documented for long-term visibility.",
       },
     ],
     []
   );
 
-  const data = (items?.length ? items : fallbackItems).slice(0, 6);
+  const faqs = items.length > 0 ? items : fallbackItems;
 
-  // First one open by default
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(0); // First item open by default
 
-  // Split into two independent columns to avoid grid row-height gaps
-  const left = [];
-  const right = [];
-  data.forEach((item, idx) => {
-    const payload = { ...item, idx };
-    if (idx % 2 === 0) left.push(payload);
-    else right.push(payload);
-  });
+  const toggle = (idx) => {
+    setOpenIndex(openIndex === idx ? -1 : idx);
+  };
 
-  const Card = ({ item }) => {
-    const isOpen = openIndex === item.idx;
+  const Card = ({ item, idx }) => {
+    const isOpen = openIndex === idx;
 
     return (
       <div
-        className={[
-          "rounded-2xl border border-gray-200 bg-white shadow-sm",
-          "transition-shadow duration-200 hover:shadow-md",
-        ].join(" ")}
+        className="rounded-2xl bg-white shadow-sm border border-gray-100 overflow-hidden cursor-pointer"
+        onClick={() => toggle(idx)}
       >
-        <button
-          type="button"
-          onClick={() => setOpenIndex((prev) => (prev === item.idx ? -1 : item.idx))}
-          className={[
-            "w-full flex items-center justify-between gap-4",
-            "px-6 py-5 text-left",
-          ].join(" ")}
-          aria-expanded={isOpen}
-        >
-          <span className="text-[15px] sm:text-base font-semibold text-slate-900">
+        <div className="px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition">
+          <h3 className="text-lg font-semibold text-gray-900 pr-4">
             {item.q}
-          </span>
-
-          <span
+          </h3>
+          <ChevronDown
             className={[
-              "flex h-9 w-9 items-center justify-center rounded-full",
-              "border border-gray-200 bg-white",
-              "transition-transform duration-200",
-              isOpen ? "rotate-180" : "rotate-0",
+              "h-5 w-5 text-gray-400 transition-transform duration-300",
+              isOpen ? "rotate-180" : "",
             ].join(" ")}
-            aria-hidden="true"
-          >
-            <ChevronDown className="h-4 w-4 text-slate-700" />
-          </span>
-        </button>
+          />
+        </div>
 
         <div
           className={[
-            "grid transition-[grid-template-rows] duration-200 ease-out",
+            "grid transition-all duration-300 ease-out",
             isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
           ].join(" ")}
         >
           <div className="overflow-hidden">
-            <div className="px-6 pb-5 text-sm sm:text-[15px] text-slate-600 leading-relaxed">
+            <div className="px-6 pb-6 pt-2 text-base text-gray-600 leading-relaxed">
               {item.a}
             </div>
           </div>
@@ -109,27 +81,33 @@ export default function FAQ({
     );
   };
 
+  // Split into two columns
+  const mid = Math.ceil(faqs.length / 2);
+  const left = faqs.slice(0, mid).map((item, i) => ({ ...item, idx: i }));
+  const right = faqs.slice(mid).map((item, i) => ({ ...item, idx: i + mid }));
+
   return (
-    <section className={["w-full", className].join(" ")}>
-      <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8 xl:px-0 py-14 sm:py-16">
-        <h2 className="text-center text-2xl sm:text-3xl font-semibold text-slate-900">
-          {title}
-        </h2>
+    <section className={`relative bg-gray-50 py-20 lg:py-28 ${className}`}>
+      <div className="mx-auto max-w-[1680px] px-6 lg:px-10">
+        {/* Heading */}
+        <div className="text-center mb-16 lg:mb-20">
+          <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900">
+            {title}
+          </h2>
+        </div>
 
-        <div className="mt-10">
-          {/* Mobile: single column | Desktop: two independent columns (no gap issue) */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-7 items-start">
-            <div className="flex flex-col gap-6 lg:gap-7">
-              {left.map((item) => (
-                <Card key={item.idx} item={item} />
-              ))}
-            </div>
+        {/* FAQ Grid - Two independent columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="space-y-6">
+            {left.map((item) => (
+              <Card key={item.idx} item={item} idx={item.idx} />
+            ))}
+          </div>
 
-            <div className="flex flex-col gap-6 lg:gap-7">
-              {right.map((item) => (
-                <Card key={item.idx} item={item} />
-              ))}
-            </div>
+          <div className="space-y-6">
+            {right.map((item) => (
+              <Card key={item.idx} item={item} idx={item.idx} />
+            ))}
           </div>
         </div>
       </div>
