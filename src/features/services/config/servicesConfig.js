@@ -14,7 +14,7 @@ export const servicesConfig = [
       "Summit manages office, retail, and industrial properties through disciplined systems and consistent oversight. Our approach emphasizes compliance, preventative maintenance, vendor coordination, and clear reporting. These practices support stable operations, protect asset value, and reduce friction for owners over time consistently.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
-    to: "/services/commercial-property-management",
+    to: "/commercial",
     linkText: "Know more",
   },
   {
@@ -24,7 +24,7 @@ export const servicesConfig = [
       "Our multifamily services support apartment communities through structured daily operations and consistent execution. Defined procedures guide leasing, maintenance, resident communication, and financial reporting. This approach creates stability, protects ownership objectives, and supports long-term asset performance for owners over time consistently.",
     image:
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1600&q=80",
-    to: "/services/multi-family-residential-management",
+    to: "/multi-family",
     linkText: "Know more",
   },
   {
@@ -34,7 +34,7 @@ export const servicesConfig = [
       "Our leasing and brokerage services support occupancy through structured processes and market-aware coordination. We assist with property positioning, marketing efforts, and leasing execution aligned with ownership goals. This approach helps attract qualified tenants and reduce downtime across diverse property portfolios.",
     image:
       "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1600&q=80",
-    to: "/services/leasing-and-brokerage",
+    to: "/lease-management",
     linkText: "Know more",
   },
   {
@@ -44,7 +44,7 @@ export const servicesConfig = [
       "Summit provides commercial brokerage services informed by operational experience and market insight. We assist owners with leasing strategies and transaction considerations aligned with asset objectives. Structured analysis and coordination support clarity, reduce risk, and promote informed outcomes for long-term planning.",
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
-    to: "/services/commercial-brokerage",
+    to: "/commercial-brokerage",
     linkText: "Know more",
   },
   {
@@ -53,8 +53,8 @@ export const servicesConfig = [
     description:
       "Our advisory services support owners through thoughtful evaluation of operational, financial, and strategic considerations. Guidance is grounded in real-world management experience and practical insight. This structured approach helps clients assess performance, manage risk, and plan confidently for long-term ownership decisions.",
     image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80",
-    to: "/services/real-estate-advisory-services",
+      "https://weaver.com/wp-content/uploads/2025/10/Two-business-professionals-engage-in-discussion-during-a-meeting_AdobeStock_982130690.jpg",
+    to: "/real-estate-advisory-services",
     linkText: "Know more",
   },
   {
@@ -64,7 +64,7 @@ export const servicesConfig = [
       "Summit delivers accounting and financial reporting through defined procedures and consistent controls. Our approach emphasizes accuracy, documentation, and timely communication. Clear reports provide insight into performance, support compliance, and enable confident decision-making for owners across commercial and multifamily portfolios consistently.",
     image:
       "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80",
-    to: "/services/accounting-and-financial-reporting",
+    to: "/accounting-financial-reporting",
     linkText: "Know more",
   },
   {
@@ -73,8 +73,28 @@ export const servicesConfig = [
     description:
       "Summit oversees maintenance operations and capital projects using structured planning and coordinated execution. Preventative strategies, vendor oversight, and quality control protect asset conditions. This disciplined approach controls costs, supports operations, and preserves long-term property value for owners over time consistently.",
     image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
-    to: "/services/maintenance-and-capital-projects",
+      "https://www.solutionsgc.com/wp-content/uploads/commercial-engineers-pointing-at-blueprint-sketch-scaled.jpg",
+    to: "/maintenance-and-capital-projects",
+    linkText: "Know more",
+  },
+  {
+    id: "owners-association-management",
+    title: "Owners’ Association Management",
+    description:
+      "Summit supports owners’ associations with structured management aligned to board governance responsibilities. Clear communication, transparent financial reporting, and consistent procedures guide operations. This approach reduces uncertainty, supports informed decision-making, and helps communities maintain stability over time with confidence and clarity.",
+    image:
+      "https://blog.hignellhoa.com/hubfs/An%20HOA%20board%20meeting%20at%20an%20outdoor%20table%20with%20laptops.jpg",
+    to: "/owners-association-management",
+    linkText: "Know more",
+  },
+  {
+    id: "mobile-Home-park-management",
+    title: "Mobile Home Park Management",
+    description:
+      "Summit manages mobile home park communities using disciplined processes and regulatory awareness. Consistent operations, clear communication, and documented procedures support compliance and financial accuracy. This structured approach promotes long-term stability, orderly operations, and asset value protection for owners over time.",
+    image:
+      "https://blog.hignellhoa.com/hubfs/An%20HOA%20board%20meeting%20at%20an%20outdoor%20table%20with%20laptops.jpg",
+    to: "/mobile-Home-park-management",
     linkText: "Know more",
   },
 ];

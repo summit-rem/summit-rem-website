@@ -11,17 +11,20 @@ export default function Services() {
 
   return (
     <section className="relative bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <div className="mx-auto w-full max-w-[1680px] px-4 sm:px-6 lg:px-10 pt-10 pb-12 lg:pt-12 lg:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-16">
         {/* LEFT – Services list */}
         <div className="lg:col-span-5">
           <p className="text-sm uppercase tracking-wide text-gray-500 mb-4">
             Our Services
           </p>
 
-          <h2 className="text-4xl font-semibold mb-10">
+          <h3 className="text-4xl font-semibold mb-10">
             How We Support Property Ownership
-          </h2>
-
+          </h3>
+          <p>
+            Summit Real Estate Management delivers structured property management services across commercial and residential asset types. Each service is supported by documented standards, experienced teams, and consistent execution.
+          </p>
+          <br />
           <div className="space-y-1">
             {services.map((service) => {
               const isActive = active.id === service.id;
@@ -31,7 +34,7 @@ export default function Services() {
                   key={service.id}
                   onClick={() => setActive(service)}
                   className={[
-                    "group w-full text-left border-b pb-4 pt-4 transition",
+                    "group w-full text-left border-b pb-4 pt-4 transition cursor-pointer",
                     isActive
                       ? "border-[#7A1B2B]"
                       : "border-gray-200 hover:border-gray-300",
@@ -73,7 +76,7 @@ export default function Services() {
 
           <h3 className="text-2xl font-semibold mb-4">{active.title}</h3>
 
-          <p className="text-gray-600 mb-8 max-w-2xl">{active.description}</p>
+          <p className="text-gray-600 mb-8">{active.description}</p>
 
           <NavLink
             to={active.to}
