@@ -7,6 +7,9 @@ import FAQ from "../../components/sections/FAQ/FAQ";
 import TestimonialsGrid from "../../components/sections/TestimonialsGrid/TestimonialsGrid";
 import { contactConfig } from "../../features/contact/config/contactConfig";
 import { testimonialsConfig } from "../../features/testimonials/config/testimonialsConfig";
+import FeatureStats from "../../components/sections/FeatureStats/FeatureStats";
+import OurStoryPromo from "../../components/sections/OurStoryPromo/OurStoryPromo";
+import ResourcesPromo from "../../components/sections/ResourcesPromo/ResourcesPromo";
 
 
 export default function HomePage() {
@@ -14,13 +17,16 @@ export default function HomePage() {
   return (
     <div>
       <Hero data={homeHeroConfig} />
+      <FeatureStats />
       <Services />
-      <TeamPromo />
+      <OurStoryPromo />
+      <ResourcesPromo />
+      {/* <TeamPromo /> */}
       <TestimonialsGrid
-              heading={testimonialsConfig.heading}
-              subheading={testimonialsConfig.subheading}
-              testimonials={testimonialsConfig.testimonials}
-            />
+        heading={testimonialsConfig.heading}
+        subheading={testimonialsConfig.subheading}
+        testimonials={testimonialsConfig.testimonials}
+      />
       <FAQ items={faqs} />
     </div>
   );

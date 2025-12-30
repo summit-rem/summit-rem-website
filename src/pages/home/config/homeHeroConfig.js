@@ -1,40 +1,29 @@
-import HeaderImage from '../../../assets/image/header_image.jpg';
+import HeaderImage from "../../../assets/image/header_image.jpg";
 
 export const homeHeroConfig = {
-  pill: "Summit Real Estate Management",
-  title: {
-    before: "Less Stress. Better",
-    highlight: "Managed",
-    after: ".",
+  badge: "Less Stress. Better Managed.",
+  headline: "Professional Commercial & Multifamily\nProperty Management Since 2000.",
+  description:
+    "Summit Real Estate Management delivers structured commercial and multifamily property management built on consistency, clarity, and long-term experience, so ownership feels simpler and more predictable.",
+
+  image: {
+    src: HeaderImage,
+    alt: "Professional property management city view",
   },
-  subtitle:
-    'Professional Commercial & Multifamily Property Management Since 2000.',
-  primaryCta: { label: "Login", to: "/account" },
 
   cards: {
     rating: {
-      kicker: "Average Rating",
+      title: "Average Rating",
       value: "4.8",
-      caption: "Trusted by owners & residents across our communities.",
-      cta: "View testimonials",
-      to: "#testimonials",
+      stars: 5,
+      body: "Trusted by owners and residents across the communities we manage.",
+      cta: { label: "View testimonials", to: "#testimonials" },
     },
-    team: {
-      title: "Meet our team",
-      caption:
-        "Experienced professionals focused on structured management, clear reporting, and long-term value.",
-      cta: "See our team",
-      to: "/about/team",
+    story: {
+      title: "Experience That Shows",
+      body:
+        "Since 2000, Summit has delivered structured, disciplined property management built to reduce friction and protect long-term value.",
+      cta: { label: "Our Story", to: "/about" },
     },
-  },
-
-  heroImage: {
-    src: HeaderImage,
-    alt: "Featured property",
-    badge: "Professional Property Management",
-    note: "Since 2000, Summit has delivered structured, disciplined property management built to reduce friction and protect long-term value.",
-    title: "Experience That Shows",
-    storyTo: "/about/story",
-    storyLabel: "Our story"
   },
 };
