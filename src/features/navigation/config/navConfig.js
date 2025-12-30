@@ -13,12 +13,8 @@ export const navConfig = {
     { label: "Home", to: "/" },
     {
       label: "Listings",
-      to: "/properties",
       mega: {
-        title: "Listings",
-        description:
-          "Explore available properties and vacancies across our managed portfolio.",
-        cta: { label: "View all listings", to: "/properties" },
+        description: "Explore available properties and vacancies across our managed portfolio.",
       },
       children: [
         // {
@@ -35,18 +31,28 @@ export const navConfig = {
     },
     {
       label: "Services",
+      mega: {
+        description: "Browse our comprehensive property management solutions.",
+      },
       children: [
-        { label: "COMMERCIAL", to: "/commercial" },
-        { label: "MULTI-FAMILY RESIDENTIAL", to: "/multi-family" },
-        { label: "COMMERCIAL BROKERAGE", to: "/commercial-brokerage" },
-        { label: "ACCOUNTING & FINANCIAL REPORTING", to: "/commercial-brokerage" },
-        { label: "LEASE MANAGEMENT", to: "/lease-management" },
-        { label: "TENANT SERVICES & SAFETY", to: "/tenant-services-and-safety" },
-        { label: "TRANSITION STRATEGY", to: "/transition-strategy" },
+        { label: "Commercial", to: "/commercial" },
+        { label: "Multi-family residential", to: "/multi-family" },
+        { label: "Commercial brokerage", to: "/commercial-brokerage" },
+        { label: "Accounting & financial reporting", to: "/accounting-financial-reporting" },
+        { label: "Lease management", to: "/lease-management" },
+        { label: "Real Estate Advisory Services", to: "/real-estate-advisory-services" },
+        { label: "Maintenance & Capital Projects", to: "/maintenance-and-capital-projects" },
+        { label: "Owners’ Association Management", to: "/owners-association-management" },
+        { label: "Mobile Home Park Management", to: "/mobile-Home-park-management" },
+        // { label: "Tenant services & safety", to: "/tenant-services-and-safety" },
+        // { label: "Transition strategy", to: "/transition-strategy" },
       ],
     },
     {
       label: "About Us",
+      mega: {
+        description: "Learn about our history, values, and commitment to excellence.",
+      },
       children: [
         { label: "Our Story", to: "/about" },
         // { label: "Our Team", to: "/about/team" },

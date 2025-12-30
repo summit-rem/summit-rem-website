@@ -26,7 +26,7 @@ export default function Navbar() {
   );
 
   return (
-    <header className="w-full bg-white border-b border-gray-200">
+    <header className="mx-auto w-full px-4 sm:px-6 lg:px-10 bg-white border-b border-gray-200">
       <Container className="h-16">
         <nav className="h-16 flex items-center justify-between gap-3">
           {/* Brand */}

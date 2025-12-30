@@ -25,9 +25,9 @@ export default function NavMegaMenu({ item, onNavigate, align = "center", width 
         <div className="grid grid-cols-12">
           {/* Column 1: Heading + content */}
           <div className="col-span-4 p-8">
-            <p className="text-xs font-semibold tracking-wide text-gray-500 uppercase">
+            {/* <p className="text-xs font-semibold tracking-wide text-gray-500 uppercase">
               {item.label}
-            </p>
+            </p> */}
 
             <h3 className="mt-3 text-2xl font-semibold text-black leading-tight">
               {mega.title || item.label}
@@ -60,7 +60,7 @@ export default function NavMegaMenu({ item, onNavigate, align = "center", width 
                 return (
                   <li key={`${c.label}-${c.to}`}>
                     <NavLink
-                      to={c.to}
+                      // to={c.to}
                       onMouseEnter={() => setActive(c)}
                       onFocus={() => setActive(c)}
                       onClick={onNavigate}
