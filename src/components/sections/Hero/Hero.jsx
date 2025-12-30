@@ -1,207 +1,155 @@
+
+
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  Users,
-  Star,
-  LogIn,
-  Home as HomeIcon,
-  Mail,
-  Quote,
-} from "lucide-react";
+import { ArrowRight, Quote, Users } from "lucide-react";
+import { homeHeroConfig } from "../../../pages/home/config/homeHeroConfig";
 
-function StatCard({ className = "", children }) {
+function Stars({ count = 5 }) {
   return (
-    <div
-      className={[
-        "rounded-2xl border border-[var(--color-border)] bg-white shadow-sm",
-        className,
-      ].join(" ")}
-    >
-      {children}
+    <div className="flex items-center gap-1">
+      {Array.from({ length: Number(count) }).map((_, i) => (
+        <svg
+          key={i}
+          viewBox="0 0 24 24"
+          className="h-5 w-5 fill-[#7a1f2b]" // Exact burgundy fill
+          aria-hidden="true"
+        >
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+      ))}
     </div>
   );
 }
 
-export default function Hero({ data }) {
-  const {
-    pill,
-    title,
-    subtitle,
-    primaryCta,
-    cards,
-    heroImage,
-  } = data;
+export default function Hero({ data = homeHeroConfig }) {
+  const cfg = data ?? homeHeroConfig;
+
+  const badge = cfg.badge ?? "";
+  const headline = cfg.headline ?? "";
+  const description = cfg.description ?? "";
+  const image = cfg.image ?? {};
+  const rating = cfg.cards?.rating ?? {};
+  const story = cfg.cards?.story ?? {};
 
   return (
-    <section className="relative">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          {/* Left */}
-          <div className="lg:col-span-7">
-            {/* pill */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-4 py-2 text-sm">
-              <span
-                className="h-2 w-2 rounded-full"
-                style={{ background: "var(--color-burgundy)" }}
-              />
-              <span className="text-[var(--color-ink)] font-medium">{pill}</span>
-            </div>
+    <section className="relative bg-white">
+      <div className="mx-auto w-full max-w-[1680px] px-4 sm:px-6 lg:px-10 pt-10 pb-12 lg:pt-12 lg:pb-20">
+        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
+          {/* LEFT CONTENT */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            {/* Badge Pill */}
+            {badge ? (
+              <div className="inline-flex w-fit items-center rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
+                {badge}
+              </div>
+            ) : null}
 
-            {/* heading */}
-            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-[var(--color-ink)]">
-              {title.before}{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10">{title.highlight}</span>
-                <span
-                  className="absolute left-0 right-0 -bottom-2 h-1 rounded-full opacity-80"
-                  style={{ background: "var(--color-burgundy)" }}
-                />
-              </span>{" "}
-              {title.after}
-            </h1>
+            {/* Headline */}
+            <h3 className="mt-6 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl leading-tight">
+              {String(headline)
+                .split("\n")
+                .map((line, idx) => (
+                  <span key={idx} className="block">
+                    {line}
+                  </span>
+                ))}
+            </h3>
 
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-[var(--color-muted)]">
-              {subtitle}
-            </p>
+            {/* Burgundy Underline */}
+            <div className="mt-6 h-1 w-36 rounded-full bg-[#7a1f2b]" />
 
-            {/* CTAs */}
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link
-                to={primaryCta.to}
-                className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-95"
-                style={{ background: "var(--color-burgundy)" }}
-              >
-                <LogIn size={18} />
-                {primaryCta.label}
-              </Link>
-            </div>
+            {/* Description */}
+            {description ? (
+              <p className="mt-6 max-w-3xl text-lg leading-7 text-gray-700">
+                {description}
+              </p>
+            ) : null}
 
-            {/* bottom cards */}
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* rating */}
-              <StatCard className="p-6">
+            {/* Cards Row */}
+            <div className="mt-12 grid gap-8 sm:grid-cols-2">
+              {/* Rating Card */}
+              <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <div className="text-xs uppercase tracking-wider text-gray-500">
-                      {cards.rating.kicker}
-                    </div>
-                    <div className="mt-3 flex items-center gap-3">
-                      <div className="text-4xl font-semibold text-[var(--color-ink)]">
-                        {cards.rating.value}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <Star
-                            key={i}
-                            size={18}
-                            style={{ color: "var(--color-burgundy)" }}
-                            fill="currentColor"
-                          />
-                        ))}
-                      </div>
-                    </div>
-                    <p className="mt-2 text-sm text-[var(--color-muted)]">
-                      {cards.rating.caption}
+                    <p className="text-sm font-semibold text-gray-900">
+                      {rating.title ?? "Average Rating"}
                     </p>
-                  </div>
 
-                  <div
-                    className="rounded-xl p-3"
-                    style={{ background: "rgba(107,18,32,0.08)" }}
-                  >
-                    <Quote size={20} style={{ color: "var(--color-burgundy)" }} />
-                  </div>
-                </div>
-
-                <Link
-                  to={cards.rating.to}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold"
-                  style={{ color: "var(--color-burgundy)" }}
-                >
-                  {cards.rating.cta}
-                  <ArrowRight size={18} />
-                </Link>
-              </StatCard>
-
-              {/* team */}
-              <StatCard className="p-6">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <div className="text-sm font-semibold text-[var(--color-ink)]">
-                      {cards.team.title}
-                    </div>
-                    <p className="mt-2 text-sm text-[var(--color-muted)]">
-                      {cards.team.caption}
-                    </p>
-                  </div>
-                  <div
-                    className="rounded-xl p-3"
-                    style={{ background: "rgba(107,18,32,0.08)" }}
-                  >
-                    <Users size={20} style={{ color: "var(--color-burgundy)" }} />
-                  </div>
-                </div>
-
-                <Link
-                  to={cards.team.to}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold"
-                  style={{ color: "var(--color-burgundy)" }}
-                >
-                  {cards.team.cta}
-                  <ArrowRight size={18} />
-                </Link>
-              </StatCard>
-            </div>
-          </div>
-
-          {/* Right image */}
-          <div className="lg:col-span-5">
-            <div className="relative">
-              <div
-                className="relative overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-white shadow-sm"
-                style={{ minHeight: 650 }}
-              >
-                {/* Image */}
-                <img
-                  src={heroImage.src}
-                  alt={heroImage.alt}
-                  className="h-full w-full object-cover"
-                  style={{ minHeight: 650 }}
-                />
-
-                {/* Subtle gradient for legibility */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
-
-                {/* Story Card Overlay */}
-                <div className="absolute left-5 right-5 bottom-5">
-                  <div className="rounded-2xl border border-white/20 bg-white/90 backdrop-blur-md shadow-sm p-4 sm:p-5">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <div className="text-xs uppercase tracking-wider text-gray-500">
-                          About Summit
-                        </div>
-                        <div className="mt-1 text-lg sm:text-xl font-semibold text-[var(--color-ink)] leading-snug">
-                          {heroImage.title || "Our Story"}
-                        </div>
-                        <p className="mt-2 text-sm text-[var(--color-muted)] leading-6">
-                          {heroImage.note}
-                        </p>
+                    <div className="mt-4 flex items-center gap-4">
+                      <div className="text-5xl font-extrabold text-gray-900">
+                        {rating.value ?? "4.8"}
                       </div>
+                      <Stars count={rating.stars ?? 5} />
+                    </div>
 
+                    {rating.body ? (
+                      <p className="mt-5 text-base leading-6 text-gray-700">
+                        {rating.body}
+                      </p>
+                    ) : null}
+
+                    {rating?.cta?.to ? (
                       <Link
-                        to={heroImage.storyTo || "/about/story"}
-                        className="shrink-0 inline-flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-95"
-                        style={{ background: "var(--color-burgundy)" }}
-                        aria-label="Go to Our Story"
+                        to={rating.cta.to}
+                        className="mt-8 inline-flex items-center gap-2 text-base font-semibold text-[#7a1f2b] hover:opacity-80"
                       >
-                        {heroImage.storyLabel || "Read our story"}
-                        <ArrowRight size={18} />
+                        {rating.cta.label ?? "View testimonials"}
+                        <ArrowRight className="h-5 w-5" />
                       </Link>
-                    </div>
+                    ) : null}
+                  </div>
+
+                  {/* Icon top-right */}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f6eef0]">
+                    <Quote className="h-6 w-6 text-[#7a1f2b]" />
                   </div>
                 </div>
               </div>
+
+              {/* Story Card */}
+              <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">
+                      {story.title ?? "Experience That Shows"}
+                    </p>
+
+                    {story.body ? (
+                      <p className="mt-5 text-base leading-6 text-gray-700">
+                        {story.body}
+                      </p>
+                    ) : null}
+
+                    {story?.cta?.to ? (
+                      <Link
+                        to={story.cta.to}
+                        className="mt-8 inline-flex items-center gap-2 text-base font-semibold text-[#7a1f2b] hover:opacity-80"
+                      >
+                        {story.cta.label ?? "Our Story"}
+                        <ArrowRight className="h-5 w-5" />
+                      </Link>
+                    ) : null}
+                  </div>
+
+                  {/* Icon top-right */}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f6eef0]">
+                    <Users className="h-6 w-6 text-[#7a1f2b]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT IMAGE */}
+          <div className="lg:col-span-5">
+            <div className="h-full min-h-[500px] lg:min-h-[680px]">
+              <img
+                src={image?.src}
+                alt={image?.alt ?? "Professional property management city view"}
+                className="h-full w-full rounded-3xl object-cover shadow-lg"
+                loading="eager"
+              />
             </div>
           </div>
         </div>
