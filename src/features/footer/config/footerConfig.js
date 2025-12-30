@@ -6,8 +6,8 @@ export const footerConfig = {
     logo: SignatureLogo,
     description:
       "Professional property management services for commercial and multi-family properties since 2000.",
-    addressLines: ["Summit Real Estate Management Services Inc", "2205 Plaza Drive, Suite 100 Rocklin, CA 95765 ", "Los Angeles, CA 90012"],
-    phone: "916.960.5700",
+    addressLines: ["2205 Plaza Dr, Rocklin,", "CA, 95765, United States"],
+    phone: "(916) 960-5700",
     email: "hello@summit-rem.com",
   },
 
@@ -15,23 +15,29 @@ export const footerConfig = {
     {
       title: "Company",
       links: [
+        { label: "Home", to: "/" },
         { label: "About Us", to: "/about" },
-        { label: "Our Staff", to: "/about" },
-        { label: "Careers", to: "/about" },
+        { label: "Vacancies", to: "/vacancies" },
+        // { label: "Our Staff", to: "/about" },
+        // { label: "Careers", to: "/about" },
         { label: "Contact Us", to: "/contact" },
-        { label: "Resources", to: "/resources" },
+        // { label: "Resources", to: "/resources" },
       ],
     },
     {
       title: "Services",
       links: [
-        { label: "COMMERCIAL", to: "/commercial" },
-        { label: "MULTI-FAMILY RESIDENTIAL", to: "/multi-family" },
-        { label: "COMMERCIAL BROKERAGE", to: "/commercial-brokerage" },
-        { label: "ACCOUNTING", to: "/commercial-brokerage" },
-        { label: "LEASE MANAGEMENT", to: "/lease-management" },
-        { label: "TENANT SERVICES & SAFETY", to: "/tenant-services-and-safety" },
-        { label: "TRANSITION STRATEGY", to: "/transition-strategy" },
+        { label: "Commercial", to: "/commercial" },
+        { label: "Multi-Family Residential", to: "/multi-family" },
+        { label: "Commercial Brokerage", to: "/commercial-brokerage" },
+        { label: "Accounting & Financial Reporting", to: "/accounting-financial-reporting" }, // Note: same 'to' as above – adjust if needed
+        { label: "Lease Management", to: "/lease-management" },
+        { label: "Real Estate Advisory Services", to: "/real-estate-advisory-services" },
+        { label: "Maintenance & Capital Projects", to: "/maintenance-and-capital-projects" },
+        { label: "Owners’ Association Management", to: "/owners-association-management" },
+        { label: "Mobile Home Park Management", to: "/mobile-Home-park-management" },
+        // { label: "Tenant Services & Safety", to: "/tenant-services-and-safety" },
+        // { label: "Transition Strategy", to: "/transition-strategy" },
       ],
     },
     {
