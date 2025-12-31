@@ -73,7 +73,7 @@ const RESOURCES = [
     description:
     "See how routine inspections catch issues early and protect asset performance over the long term.",
     duration: "07:32",
-    media: img.city,
+    media: img.keys,
   },
   {
     id: "f9",
@@ -88,7 +88,7 @@ const RESOURCES = [
     description:
     "See how routine inspections catch issues early and protect asset performance over the long term.",
     duration: "07:32",
-    media: img.city,
+    media: img.documents,
   },
   // {
   //   id: "f2",

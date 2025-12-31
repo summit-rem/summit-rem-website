@@ -93,7 +93,7 @@ export const servicesConfig = [
     description:
       "Summit manages mobile home park communities using disciplined processes and regulatory awareness. Consistent operations, clear communication, and documented procedures support compliance and financial accuracy. This structured approach promotes long-term stability, orderly operations, and asset value protection for owners over time.",
     image:
-      "https://blog.hignellhoa.com/hubfs/An%20HOA%20board%20meeting%20at%20an%20outdoor%20table%20with%20laptops.jpg",
+      "https://images.pexels.com/photos/1486785/pexels-photo-1486785.jpeg",
     to: "/mobile-Home-park-management",
     linkText: "Know more",
   },
