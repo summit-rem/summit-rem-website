@@ -166,7 +166,7 @@ export default function CookiePolicyPage() {
                     <Mail className="mt-0.5 h-4 w-4 text-[#6b0f1a]" />
                     <div>
                       <div className="font-medium">Email</div>
-                      <div className="text-slate-600">hello@summit-rem.com</div>
+                      <div className="text-slate-600">marketing@summit-rem.com</div>
                     </div>
                   </div>
                 </div>

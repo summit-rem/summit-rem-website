@@ -100,7 +100,7 @@ const LegalLayout = ({ title, subtitle, effectiveDate, icon: Icon, children, toc
                 <Mail className="mt-0.5 h-4 w-4 text-[#6b0f1a]" />
                 <div>
                   <div className="font-medium">Email</div>
-                  <div className="text-slate-600">hello@summit-rem.com</div>
+                  <div className="text-slate-600">marketing@summit-rem.com</div>
                 </div>
               </div>
               <div className="flex items-start gap-2">
@@ -234,7 +234,7 @@ export default function PrivacyPolicyPage() {
           right to request access to personal information we have collected,
           request correction of inaccurate information, or request deletion of
           personal information, subject to legal exceptions. Requests may be
-          submitted by contacting us at hello@summit-rem.com , and we will
+          submitted by contacting us at marketing@summit-rem.com , and we will
           respond in accordance with applicable legal requirements.
         </p>
       </Section>
