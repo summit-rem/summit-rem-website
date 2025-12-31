@@ -96,6 +96,7 @@ export default function Footer() {
                   <a
                     key={s.label}
                     href={s.href}
+                    target="_blank"
                     aria-label={s.label}
                     className="text-gray-300 hover:text-white transition cursor-pointer"
                   >

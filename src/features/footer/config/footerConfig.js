@@ -8,7 +8,7 @@ export const footerConfig = {
       "Professional property management services for commercial and multi-family properties since 2000.",
     addressLines: ["2205 Plaza Dr, Rocklin,", "CA, 95765, United States"],
     phone: "(916) 960-5700",
-    email: "hello@summit-rem.com",
+    email: "marketing@summit-rem.com",
   },
 
   columns: [
@@ -21,7 +21,7 @@ export const footerConfig = {
         // { label: "Our Staff", to: "/about" },
         // { label: "Careers", to: "/about" },
         { label: "Contact Us", to: "/contact" },
-        // { label: "Resources", to: "/resources" },
+        { label: "Resources", to: "/resources" },
       ],
     },
     {
@@ -34,7 +34,7 @@ export const footerConfig = {
         { label: "Lease Management", to: "/lease-management" },
         { label: "Real Estate Advisory Services", to: "/real-estate-advisory-services" },
         { label: "Maintenance & Capital Projects", to: "/maintenance-and-capital-projects" },
-        { label: "Owners’ Association Management", to: "/owners-association-management" },
+        { label: "Owner's Association Management", to: "/owners-association-management" },
         { label: "Mobile Home Park Management", to: "/mobile-Home-park-management" },
         // { label: "Tenant Services & Safety", to: "/tenant-services-and-safety" },
         // { label: "Transition Strategy", to: "/transition-strategy" },
@@ -52,18 +52,17 @@ export const footerConfig = {
   ],
 
   bottom: {
-    copyright:
-      "© 2025 Summit Real Estate Management Services. All rights reserved. | License #01049566",
+    copyright: `© ${new Date().getFullYear()} Summit Real Estate Management Services. All rights reserved.`,
     legal: [
       { label: "Privacy Policy", to: "/privacy-policy" },
       { label: "Terms of Service", to: "/terms-and-conditions" },
       { label: "cookie-policy", to: "/cookie-policy" },
     ],
     socials: [
-      { label: "Facebook", href: "#", icon: "Facebook" },
-      { label: "Twitter", href: "#", icon: "Twitter" },
-      { label: "LinkedIn", href: "#", icon: "LinkedIn" },
-      { label: "Instagram", href: "#", icon: "Instagram" },
+      { label: "Facebook", href: "https://www.facebook.com/summitrem", icon: "" },
+      { label: "TickTok", href: "https://www.tiktok.com/@summitrem", icon: "ticktok" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/summitrem", icon: "LinkedIn" },
+      { label: "Instagram", href: "https://www.instagram.com/summitrem", icon: "" },
     ],
   },
 };
