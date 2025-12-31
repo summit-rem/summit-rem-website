@@ -88,7 +88,7 @@ export default function Hero({ data = homeHeroConfig }) {
                       </p>
                     ) : null}
 
-                    {rating?.cta?.to ? (
+                    {/* {rating?.cta?.to ? (
                       <Link
                         to={rating.cta.to}
                         className="mt-8 inline-flex items-center gap-2 text-base font-semibold text-[#7a1f2b] hover:opacity-80"
@@ -96,7 +96,7 @@ export default function Hero({ data = homeHeroConfig }) {
                         {rating.cta.label ?? "View testimonials"}
                         <ArrowRight className="h-5 w-5" />
                       </Link>
-                    ) : null}
+                    ) : null} */}
                   </div>
 
                   {/* Icon top-right */}
