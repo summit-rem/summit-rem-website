@@ -18,7 +18,7 @@ export default function MobileHomeParkManagement() {
   const meta = {
     title: "Mobile Home Park Management",
     subtitle: "Structured operations that support compliance, infrastructure integrity, and long-term performance.",
-    heroImage: "https://blog.hignellhoa.com/hubfs/An%20HOA%20board%20meeting%20at%20an%20outdoor%20table%20with%20laptops.jpg",
+    heroImage: "https://images.pexels.com/photos/1486785/pexels-photo-1486785.jpeg",
     serviceNav,
     cta: { label: "See vacancies", to: "/vacancies" },
   };
