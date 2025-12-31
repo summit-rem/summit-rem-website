@@ -1,5 +1,6 @@
 // src/components/sections/CompanyStory/CompanyStory.jsx
 import React from "react";
+import CompanyView from "../../../assets/image/companyView.webp";
 
 export default function CompanyStory() {
   return (
@@ -10,7 +11,7 @@ export default function CompanyStory() {
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="rounded-3xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1680&q=80"
+                src={CompanyView}
                 alt="Modern city skyline representing Summit's local expertise and managed properties"
                 className="w-full h-[500px] lg:h-[620px] object-cover"
                 loading="lazy"
