@@ -5,14 +5,12 @@ export default function SplitStats({ hero, image }) {
   return (
     <section className="relative bg-white py-12 lg:py-20">
       <div className="mx-auto max-w-[1680px] px-6 lg:px-10">
-        {/* Centered Heading - reduced size to match target */}
         <div className="text-center max-w-5xl mx-auto">
           <h1 className="text-3xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-snug">
             {hero.title}
           </h1>
         </div>
 
-        {/* Image - reduced height, lighter styling */}
         <div className="mt-12 lg:mt-16">
           <div className="rounded-2xl overflow-hidden">
             <img
