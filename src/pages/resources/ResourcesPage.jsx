@@ -194,7 +194,7 @@ export default function ResourcesPage() {
   return (
     <section className="relative">
       {/* Top spacing consistent with app sections */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-14">
+      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 pt-12 sm:pt-14 py-10 my-5">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Left: title */}
           <div className="lg:col-span-5">
@@ -237,7 +237,7 @@ export default function ResourcesPage() {
             </div>
 
             {/* Tabs */}
-            <div className="mt-6 rounded-2xl bg-white ring-1 ring-slate-200 px-4 py-3">
+            {/* <div className="mt-6 rounded-2xl bg-white ring-1 ring-slate-200 px-4 py-3">
               <div className="flex flex-wrap gap-2">
                 {RESOURCE_TABS.map((t) => {
                   const Icon = t.key === "featured" ? null : ICONS[t.key];
@@ -252,12 +252,12 @@ export default function ResourcesPage() {
                   );
                 })}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* Listing */}
-        <div className="mt-10">
+        {/* <div className="mt-10">
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="text-xs font-bold tracking-[0.22em] text-slate-500">
@@ -288,7 +288,7 @@ export default function ResourcesPage() {
           </div>
 
           <div className="mt-12 pb-10" />
-        </div>
+        </div> */}
       </div>
     </section>
   );
