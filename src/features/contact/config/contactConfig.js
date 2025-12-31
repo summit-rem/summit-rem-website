@@ -18,13 +18,13 @@ export const contactConfig = {
       title: "Email Us",
       description: "Send detailed questions and receive a thoughtful response from our team.",
       icon: "Mail",
-      action: { type: "email", label: "hello@summit-rem.com", value: "hello@summit-rem.com" },
+      action: { type: "email", label: "marketing@summit-rem.com", value: "marketing@summit-rem.com" },
     },
     {
       title: "Chat to Support",
       description: "Quick support for general questions, existing clients, or next steps.",
       icon: "MessageCircle",
-      action: { type: "email", label: "hello@summit-rem.com", value: "hello@summit-rem.com" },
+      action: { type: "link", label: "Chat Now", value: "https://api.whatsapp.com/send/?phone=19169605700" },
     },
     {
       title: "Visit Us",
