@@ -1,5 +1,7 @@
 // src/components/sections/SplitStats/SplitStats.jsx
 import React from "react";
+import AboutPhoto from "../../../assets/image/about-page.jpg"; 
+
 
 export default function SplitStats({ hero, image }) {
   return (
@@ -14,7 +16,7 @@ export default function SplitStats({ hero, image }) {
         <div className="mt-12 lg:mt-16">
           <div className="rounded-2xl overflow-hidden">
             <img
-              src={image.src}
+              src={AboutPhoto}
               alt={image.alt || "Summit Real Estate Management properties"}
               className="w-full h-[400px] lg:h-[550px] object-cover"
               loading="lazy"

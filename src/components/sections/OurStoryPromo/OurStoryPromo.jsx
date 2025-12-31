@@ -3,6 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { ourStoryConfig } from "../../../pages/home/config/ourStoryConfig";
+import OurStory from "../../../assets/image/ourStory.jpg";
 
 const BURGUNDY = "#7a1f2b";
 
@@ -17,9 +18,9 @@ export default function OurStoryPromo() {
           <div className="lg:col-span-6 order-2 lg:order-1">
             <div className="rounded-3xl overflow-hidden shadow-lg">
               <img
-                src={image.src}
+                src={OurStory}
                 alt={image.alt}
-                className="w-full h-[400px] lg:h-[500px] object-cover"
+                className="w-full h-[400px] lg:h-[700px] object-cover"
                 loading="lazy"
               />
             </div>

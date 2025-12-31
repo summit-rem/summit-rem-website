@@ -1,9 +1,8 @@
-
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Quote, Users } from "lucide-react";
 import { homeHeroConfig } from "../../../pages/home/config/homeHeroConfig";
+import HeaderImage from "../../../assets/image/headerImage.jpg";
 
 function Stars({ count = 5 }) {
   return (
@@ -61,7 +60,7 @@ export default function Hero({ data = homeHeroConfig }) {
 
             {/* Description */}
             {description ? (
-              <p className="mt-6 max-w-3xl text-lg leading-7 text-gray-700">
+              <p className="my-8 max-w-3xl text-lg leading-7 text-gray-700">
                 {description}
               </p>
             ) : null}
@@ -145,7 +144,7 @@ export default function Hero({ data = homeHeroConfig }) {
           <div className="lg:col-span-5">
             <div className="h-full min-h-[500px] lg:min-h-[680px]">
               <img
-                src={image?.src}
+                src={HeaderImage}
                 alt={image?.alt ?? "Professional property management city view"}
                 className="h-full w-full rounded-3xl object-cover shadow-lg"
                 loading="eager"
