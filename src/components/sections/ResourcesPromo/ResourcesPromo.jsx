@@ -85,7 +85,7 @@ export default function ResourcesPromo() {
                   <img
                     src={resource.uploaderPhotoURL}
                     alt={resource.uploaderName}
-                    className="h-9 w-9 rounded-full object-cover"
+                    className="h-9 w-9 rounded-full object-cover border-1"
                   />
                   <div>
                     <p className="text-sm font-medium text-gray-900">
@@ -113,7 +113,7 @@ export default function ResourcesPromo() {
                 Practical insights for property owners.
               </h3>
               <p className="mt-6 text-lg text-white/90 max-w-md">
-                Access in-depth articles, podcasts, videos, and market updates — all designed to support informed ownership decisions.
+                Explore resources designed to help owners better understand property management, operations, and long-term ownership considerations, grounded in real-world experience, not theory.
               </p>
             </div>
 
