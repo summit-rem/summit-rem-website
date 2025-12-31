@@ -42,7 +42,7 @@ export const navConfig = {
         { label: "Lease management", to: "/lease-management" },
         { label: "Real Estate Advisory Services", to: "/real-estate-advisory-services" },
         { label: "Maintenance & Capital Projects", to: "/maintenance-and-capital-projects" },
-        { label: "Owners’ Association Management", to: "/owners-association-management" },
+        { label: "Owner's Association Management", to: "/owners-association-management" },
         { label: "Mobile Home Park Management", to: "/mobile-Home-park-management" },
         // { label: "Tenant services & safety", to: "/tenant-services-and-safety" },
         // { label: "Transition strategy", to: "/transition-strategy" },
@@ -59,7 +59,7 @@ export const navConfig = {
       ],
     },
     { label: "Contact Us", to: "/contact" },
-    // { label: "Resources", to: "/resources" },
+    { label: "Resources", to: "/resources" },
   ],
 
   actions: [
