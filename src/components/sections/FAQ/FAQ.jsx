@@ -94,6 +94,7 @@ export default function FAQ({
           <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900">
             {title}
           </h2>
+          <p className="mt-5 py-2">Check out how Summit works, what to expect, and how we support consistent, well-managed properties.</p>
         </div>
 
         {/* FAQ Grid - Two independent columns */}
