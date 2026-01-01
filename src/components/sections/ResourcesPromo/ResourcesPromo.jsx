@@ -6,6 +6,19 @@ import { getFeaturedResources } from "../../../features/resources/config/resourc
 
 const BURGUNDY = "#7a1f2b";
 
+// Simple reading speed estimate: ~250 words per minute
+// For podcasts/videos: use duration if provided
+const getReadTime = (resource) => {
+  if (resource.type === "podcast" || resource.type === "videos") {
+    return resource.duration || "—";
+  }
+
+  // Rough estimate based on subtitle length (fallback)
+  const wordCount = (resource.subtitle || "").split(" ").length;
+  const minutes = Math.max(1, Math.round(wordCount / 250));
+  return `${minutes} min read`;
+};
+
 const getTypeIcon = (type) => {
   switch (type?.toLowerCase()) {
     case "articles":
@@ -33,96 +46,108 @@ const getButtonText = (type) => {
 };
 
 export default function ResourcesPromo() {
-  const resources = getFeaturedResources(); // Top 3 featured from data
+  const resources = getFeaturedResources(); // Top 3 featured
 
   return (
-    <section className="relative bg-white py-20 lg:py-28">
+    <section className="relative bg-gray-50 py-20 lg:py-28 overflow-hidden">
       <div className="mx-auto max-w-[1680px] px-6 lg:px-10">
-        {/* Heading - Centered, matches Services style */}
-        <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
-          <h2 className="text-4xl font-semibold tracking-tight text-gray-900">
-            Practical insights for property owners.
+        {/* Heading */}
+        <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-24">
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900">
+            Practical Insights for Property Owners
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-6 text-lg lg:text-xl text-gray-600 leading-relaxed">
             Explore resources designed to help owners better understand property management,
-            operations, and long-term ownership considerations, grounded in real-world experience,
+            operations, and long-term ownership considerations — grounded in real-world experience,
             not theory.
           </p>
         </div>
 
-        {/* 4-Item Grid: 3 Cards + 1 Large CTA */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* 3 Featured Resource Cards */}
+        {/* Grid: 3 Cards + CTA */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          {/* Featured Resource Cards */}
           {resources.map((resource) => (
             <NavLink
               key={resource.id}
               to={`/${resource.type}/${resource.id}/${slugify(resource.title)}`}
-              className="group block rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all bg-white"
+              className="group block rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col"
             >
-              <div className="relative">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={resource.media}
                   alt={resource.title}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                  loading="lazy"
                 />
-                {/* Badge - Top Left */}
-                <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-4 py-2 text-sm font-medium text-gray-800 shadow-sm">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition" />
+
+                {/* Badge */}
+                <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-800 shadow-md backdrop-blur-sm">
                   {getTypeIcon(resource.type)}
                   <span>{getBadgeLabel(resource.type, resource.tag)}</span>
                 </div>
               </div>
 
-              <div className="p-8">
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#7a1f2b] transition">
-                  {resource.title}
-                </h3>
-                <p className="mt-3 text-base text-gray-600 line-clamp-3">
-                  {resource.subtitle || resource.description}
-                </p>
+              <div className="flex-1 p-3 lg:p-8 flex flex-col justify-between">
+                {/* Title + Description */}
+                <div>
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 group-hover:text-[#7a1f2b] transition-colors line-clamp-3">
+                    {resource.title}
+                  </h3>
+                  <p className="mt-4 text-base text-gray-600 line-clamp-3 leading-relaxed pb-6">
+                    {resource.subtitle}
+                  </p>
+                </div>
 
-                {/* Author + Date */}
-                <div className="mt-6 flex items-center gap-3">
-                  <img
-                    src={resource.uploaderPhotoURL}
-                    alt={resource.uploaderName}
-                    className="h-9 w-9 rounded-full object-cover border-1"
-                  />
-                  <div>
-                    <p className="text-sm font-medium text-gray-900">
-                      {resource.uploaderName}
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      {resource.dateOfUpload}
-                    </p>
+                {/* Middle Section: Author & Read Time */}
+                <div className="mt-6 flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={resource.uploaderPhotoURL}
+                      alt={resource.uploaderName}
+                      className="h-10 w-10 rounded-full object-cover ring-2 ring-gray-200"
+                    />
+                    <div>
+                      <p className="text-sm font-semibold text-gray-900">
+                        {resource.uploaderName}
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        {resource.dateOfUpload}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="text-sm font-medium text-gray-600">
+                    {getReadTime(resource)}
                   </div>
                 </div>
 
-                {/* Action Button */}
-                <div className="mt-8 inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#7a1f2b] border border-[#7a1f2b] rounded-full hover:bg-[#7a1f2b] hover:text-white transition">
+                {/* Fixed Button at Bottom */}
+                <div className="mt-8 flex items-center gap-3 text-[#7a1f2b] font-semibold text-sm uppercase tracking-wider group-hover:gap-4 transition-all">
                   {getButtonText(resource.type)}
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition" />
                 </div>
               </div>
             </NavLink>
           ))}
 
-          {/* Large CTA Card - Full Height & Width */}
-          <div className="rounded-3xl bg-[#7a1f2b] flex flex-col justify-between p-10 lg:p-12 text-white shadow-xl min-h-full">
+          {/* Large CTA Card */}
+          <div className="rounded-3xl bg-gradient-to-br from-[#7a1f2b] to-[#9c2a3a] p-10 lg:p-14 flex flex-col justify-between text-white shadow-2xl min-h-full">
             <div>
-              <h3 className="text-4xl lg:text-5xl font-bold leading-tight">
-                Practical insights for property owners.
+              <h3 className="text-3xl lg:text-4xl font-bold leading-tight">
+                Discover More Resources
               </h3>
-              <p className="mt-6 text-lg text-white/90 max-w-md">
-                Explore resources designed to help owners better understand property management, operations, and long-term ownership considerations, grounded in real-world experience, not theory.
+              <p className="mt-6 text-lg lg:text-xl text-white/90 leading-relaxed max-w-md">
+                Articles, podcasts, and insights to help you make confident, informed decisions about your properties.
               </p>
             </div>
 
             <NavLink
               to="/resources"
-              className="mt-12 inline-flex items-center gap-3 text-lg font-semibold hover:opacity-80 transition"
+              className="mt-12 inline-flex items-center gap-4 text-lg font-bold hover:gap-6 transition-all"
             >
-              View resources
-              <ArrowRight className="h-5 w-5" />
+              View all resources
+              <ArrowRight className="h-6 w-6" />
             </NavLink>
           </div>
         </div>
@@ -131,7 +156,7 @@ export default function ResourcesPromo() {
   );
 }
 
-// Slugify helper (same as in resourcesData.js)
+// Slugify helper
 function slugify(str) {
   return String(str || "")
     .toLowerCase()

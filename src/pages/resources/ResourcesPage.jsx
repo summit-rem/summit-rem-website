@@ -104,80 +104,76 @@ function ResourceCard({ item, kind, onOpen }) {
   );
 }
 
-function FeaturedHeroCard({ item, kind, onOpen, variant = "light" }) {
+function FeaturedHeroCard({ item, kind, onOpen, tone = "burgundy" }) {
   const Icon = ICONS[kind];
   const ctaLabel =
     kind === "podcast" ? "Listen" : kind === "videos" ? "View" : "Read";
 
-  const base =
-    variant === "dark"
-      ? "bg-slate-900 text-white"
-      : variant === "burgundy"
-      ? "bg-[#6b0f1a] text-white"
-      : "bg-white text-slate-900 ring-1 ring-slate-200";
-
-  const tagBg =
-    variant === "light"
-      ? "bg-white/90 text-slate-900"
-      : "bg-white/15 text-white";
-
-  const buttonStyle =
-    variant === "light"
-      ? "bg-white text-[#6b0f1a] ring-1 ring-[#6b0f1a]/25 hover:bg-[#6b0f1a]/5"
-      : "bg-white text-slate-900 hover:bg-white/90";
+  // Tone only affects the subtle tint overlay — layout stays identical
+  const tint =
+    tone === "burgundy"
+      ? "bg-[#6b0f1a]/35"
+      : tone === "slate"
+      ? "bg-slate-900/35"
+      : "bg-slate-700/25";
 
   return (
-    <div
-      className={[
-        "group relative overflow-hidden rounded-2xl shadow-sm transition hover:shadow-md",
-        base,
-      ].join(" ")}
-    >
+    <article className="group relative overflow-hidden rounded-2xl ring-1 ring-slate-200 shadow-sm transition hover:shadow-md h-full min-h-[260px]">
+      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={item.media}
           alt={item.title}
-          className={[
-            "h-full w-full object-cover",
-            variant === "light" ? "opacity-90" : "opacity-35",
-          ].join(" ")}
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
           loading="lazy"
         />
       </div>
 
-      <div className="relative p-6">
+      {/* Consistent readability overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/45 to-black/25" />
+      {/* Optional tint (only color difference, not layout) */}
+      <div className={`absolute inset-0 ${tint}`} />
+
+      {/* Content */}
+      <div className="relative flex h-full flex-col p-6">
+        {/* Top row */}
         <div className="flex items-center justify-between gap-4">
-          <div className={["rounded-full px-3 py-1 text-xs font-semibold", tagBg].join(" ")}>
+          <div className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white ring-1 ring-white/15 backdrop-blur">
             {item.tag}
           </div>
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/15">
-            {Icon ? <Icon size={18} className="text-white" /> : null}
+
+          <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 ring-1 ring-white/10 backdrop-blur">
+            {Icon ? <Icon size={20} className="text-white" /> : null}
           </span>
         </div>
 
-        <h3 className="mt-4 text-xl font-extrabold leading-snug max-w-[22ch]">
-          {item.title}
-        </h3>
+        {/* Title + subtitle */}
+        <div className="mt-4">
+          <h3 className="text-xl font-extrabold leading-snug text-white line-clamp-3">
+            {item.title}
+          </h3>
 
-        <p className="mt-2 text-sm leading-relaxed opacity-90 max-w-[42ch] line-clamp-3">
-          {item.subtitle}
-        </p>
+          <p className="mt-2 text-sm leading-relaxed text-white/85 line-clamp-3">
+            {item.subtitle}
+          </p>
+        </div>
 
-        <button
-          type="button"
-          onClick={onOpen}
-          className={[
-            "mt-5 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold transition",
-            buttonStyle,
-          ].join(" ")}
-        >
-          {ctaLabel}
-          <ArrowRight size={16} />
-        </button>
+        {/* CTA pinned to bottom */}
+        <div className="mt-auto pt-5">
+          <button
+            type="button"
+            onClick={onOpen}
+            className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-[#6b0f1a] ring-1 ring-white/40 hover:bg-white/95 transition cursor-pointer"
+          >
+            {ctaLabel}
+            <ArrowRight size={16} className="text-[#6b0f1a]" />
+          </button>
+        </div>
       </div>
-    </div>
+    </article>
   );
 }
+
 
 export default function ResourcesPage() {
   const navigate = useNavigate();
@@ -215,23 +211,23 @@ export default function ResourcesPage() {
 
           {/* Right: featured hero cards */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
               <FeaturedHeroCard
                 item={featured[0]}
                 kind={featured[0].type}
-                variant="burgundy"
+                tone="burgundy"
                 onOpen={() => openItem(featured[0].type, featured[0])}
               />
               <FeaturedHeroCard
                 item={featured[1]}
                 kind={featured[1].type}
-                variant="dark"
+                tone="dark"
                 onOpen={() => openItem(featured[1].type, featured[1])}
               />
               <FeaturedHeroCard
                 item={featured[2]}
                 kind={featured[2].type}
-                variant="light"
+                tone="light"
                 onOpen={() => openItem(featured[2].type, featured[2])}
               />
             </div>

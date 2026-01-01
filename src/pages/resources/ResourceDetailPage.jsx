@@ -98,12 +98,17 @@ export default function ResourceDetailPage() {
                 </div>
 
                 <div className="mt-6 border-t border-slate-200 pt-6">
-                  <h2 className="text-lg font-extrabold text-slate-900">
-                    Overview
-                  </h2>
-                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                    {item.description}
-                  </p>
+                  <h2 className="text-lg font-extrabold text-slate-900">Overview</h2>
+                  <div
+                    className="mt-6 text-slate-700 leading-relaxed
+                      [&_p]:mb-4
+                      [&_h2]:mt-8 [&_h2]:mb-3 [&_h2]:text-xl [&_h2]:font-extrabold [&_h2]:text-slate-900
+                      [&_ul]:mb-4 [&_ul]:ml-6 [&_ul]:list-disc
+                      [&_li]:mb-1
+                      [&_strong]:text-slate-900
+                    "
+                    dangerouslySetInnerHTML={{ __html: item.description || "" }}
+                  />
                 </div>
               </div>
             </div>
