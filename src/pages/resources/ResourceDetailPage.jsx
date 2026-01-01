@@ -54,7 +54,7 @@ export default function ResourceDetailPage() {
         </Link>
 
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-12">
             <div className="overflow-hidden rounded-2xl ring-1 ring-slate-200 bg-white">
               <img
                 src={item.media}
@@ -115,7 +115,7 @@ export default function ResourceDetailPage() {
           </div>
 
           {/* Right side */}
-          <div className="lg:col-span-5">
+          {/* <div className="lg:col-span-5">
             <div className="rounded-2xl bg-white ring-1 ring-slate-200 p-6">
               <p className="text-xs font-bold tracking-[0.22em] text-slate-500">
                 {item.tag}
@@ -183,7 +183,7 @@ export default function ResourceDetailPage() {
                 Contact Us
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
